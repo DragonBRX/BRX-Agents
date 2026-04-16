@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script de Inicialização Única do BRX-Agent v2.0 (Corrigido para Ubuntu Moderno)
+# Script de Inicialização Única do BRX-Agent v2.0 (Versão Blindada)
 # Este script automatiza: Atualização, Instalação em VENV e Execução Interativa.
 
 set -e
@@ -34,15 +34,20 @@ if [ ! -d "venv" ]; then
     python3 -m venv venv
 fi
 
+# Definir caminhos para o executável do venv de forma absoluta
+PIP_EXEC="./venv/bin/pip"
+PYTHON_EXEC="./venv/bin/python3"
+
 # 3. Instalação de Dependências (Usando o PIP do venv diretamente)
 echo "[3/4] Instalando/Atualizando dependências dentro do venv..."
-./venv/bin/pip install --upgrade pip > /dev/null
-./venv/bin/pip install psutil requests > /dev/null
+$PIP_EXEC install --upgrade pip > /dev/null 2>&1
+$PIP_EXEC install psutil requests > /dev/null 2>&1
+
 if [ -f "requirements.txt" ]; then
-    ./venv/bin/pip install -r requirements.txt > /dev/null
+    $PIP_EXEC install -r requirements.txt > /dev/null 2>&1
 fi
 
-# 4. Execução do Modelo (Usando o Python do venv diretamente)
+# 4. Execução do Modelo
 echo "[4/4] Preparando execução..."
 echo "----------------------------------------------------------------"
 echo "Selecione o modo de execução:"
@@ -61,11 +66,11 @@ fi
 case $choice in
     1)
         echo "Iniciando Modo Autônomo..."
-        ./venv/bin/python3 brx_autonomous.py --interval 30 --verbose
+        $PYTHON_EXEC brx_autonomous.py --interval 30 --verbose
         ;;
     2)
         echo "Iniciando Modo Chat..."
-        ./venv/bin/python3 brx_chat.py
+        $PYTHON_EXEC brx_chat.py
         ;;
     *)
         echo "Opção inválida ($choice). Encerrando."
