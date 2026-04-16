@@ -1,8 +1,10 @@
-# BRX-AGENT v2.0 
+# BRX-AGENT v2.0
+
+![Arquitetura BRX](architecture.png)
 
 ## Agente Auto-Evolutivo Multi-Cérebro
 
-O BRX é um agente de inteligência artificial com arquitetura única de **8 mentes independentes** que funcionam como uma empresa com 8 funcionários especializados. Cada mente tem seu próprio raciocínio, mas se comunicam em uma **roda de conversas** para alcançar consenso.
+O BRX é um agente de inteligência artificial com arquitetura única de **8 mentes independentes** que funcionam como uma equipe de especialistas. Cada mente tem seu próprio raciocínio, mas se comunicam em uma **roda de conversas** para alcançar consenso.çar consenso.
 
 ---
 
