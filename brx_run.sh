@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Script de Inicialização Única do BRX-Agent v2.0
-# Este script automatiza: Atualização, Instalação, Ambiente Virtual e Execução.
+# Script de Inicialização Única do BRX-Agent v2.0 (Corrigido para Ubuntu Moderno)
+# Este script automatiza: Atualização, Instalação em VENV e Execução Interativa.
 
 set -e
 
@@ -28,41 +28,42 @@ else
     cd "$REPO_DIR"
 fi
 
-# 2. Configuração do Ambiente Virtual
+# 2. Configuração do Ambiente Virtual (Obrigatório no Ubuntu Moderno)
 echo "[2/4] Configurando ambiente isolado (venv)..."
 if [ ! -d "venv" ]; then
     python3 -m venv venv
 fi
-source venv/bin/activate
 
-# 3. Instalar Dependências
-echo "[3/4] Instalando/Atualizando dependências..."
-pip install --upgrade pip > /dev/null
-pip install psutil requests > /dev/null
+# 3. Instalação de Dependências (Usando o PIP do venv diretamente)
+echo "[3/4] Instalando/Atualizando dependências dentro do venv..."
+./venv/bin/pip install --upgrade pip > /dev/null
+./venv/bin/pip install psutil requests > /dev/null
 if [ -f "requirements.txt" ]; then
-    pip install -r requirements.txt > /dev/null
+    ./venv/bin/pip install -r requirements.txt > /dev/null
 fi
 
-# 4. Execução do Modelo
-echo "[4/4] Iniciando BRX-Agent..."
+# 4. Execução do Modelo (Usando o Python do venv diretamente)
+echo "[4/4] Preparando execução..."
 echo "----------------------------------------------------------------"
 echo "Selecione o modo de execução:"
 echo "1) Modo Autônomo (Geração de Parâmetros e Evolução)"
 echo "2) Modo Chat (Conversação Direta)"
 echo "----------------------------------------------------------------"
-read -p "Opção (1 ou 2): " choice
+
+# Corrigido para ler entrada do teclado mesmo via curl | bash
+read -p "Opção (1 ou 2): " choice < /dev/tty
 
 case $choice in
     1)
         echo "Iniciando Modo Autônomo..."
-        python3 brx_autonomous.py --interval 30 --verbose
+        ./venv/bin/python3 brx_autonomous.py --interval 30 --verbose
         ;;
     2)
         echo "Iniciando Modo Chat..."
-        python3 brx_chat.py
+        ./venv/bin/python3 brx_chat.py
         ;;
     *)
-        echo "Opção inválida. Encerrando."
+        echo "Opção inválida ($choice). Encerrando."
         exit 1
         ;;
 esac
