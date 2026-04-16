@@ -37,7 +37,7 @@ class Mind:
         # Se há pensamentos anteriores, reage a eles
         if previous_thoughts:
             reaction = self._react_to_others(previous_thoughts, topic)
-            thought = f"{thought}\n  ↳ Reação: {reaction}"
+            thought = f"{thought}\n   Reação: {reaction}"
         
         self.thought_history.append(thought)
         self.reasoning_chain.append(f"{self.state.name}: {thought}")
@@ -508,7 +508,7 @@ Contribuições principais:
 """
         
         for mind_name, outputs in contributions.items():
-            consensus_text += f"\n• {mind_name}: {outputs[-1][:100]}..."
+            consensus_text += f"\n {mind_name}: {outputs[-1][:100]}..."
         
         consensus_text += f"""
 
@@ -525,7 +525,7 @@ Parâmetros-chave identificados:
         
         for ptype, params in by_type.items():
             avg_value = sum(p.value for p in params if isinstance(p.value, (int, float))) / len(params) if params else 0
-            consensus_text += f"\n• {ptype}: {len(params)} parâmetros (valor médio: {avg_value:.3f})"
+            consensus_text += f"\n {ptype}: {len(params)} parâmetros (valor médio: {avg_value:.3f})"
         
         # Calcula confiança geral
         avg_confidence = sum(p.confidence for p in parameters) / len(parameters) if parameters else 0.5

@@ -444,11 +444,11 @@ class BRXParameterGenerator:
     def _generate_pattern_example(self, ptype: str) -> str:
         """Gera um exemplo de padrão"""
         examples = {
-            "sequencial": "A → B → C → D",
-            "hierárquico": "Raiz → Galhos → Folhas",
-            "cíclico": "A → B → C → A",
-            "emergente": "Simples → Complexo → Emergente",
-            "fractal": "▲ = ▲▲▲ (padrão recursivo)"
+            "sequencial": "A  B  C  D",
+            "hierárquico": "Raiz  Galhos  Folhas",
+            "cíclico": "A  B  C  A",
+            "emergente": "Simples  Complexo  Emergente",
+            "fractal": " =  (padrão recursivo)"
         }
         return examples.get(ptype, "Padrão não especificado")
     

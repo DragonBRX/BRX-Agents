@@ -1,0 +1,40 @@
+graph TD
+    subgraph "Interface do Usuário"
+        UA[brx_autonomous.py] --> |Geração de Parâmetros| BC[brx_engine.py]
+        UC[brx_chat.py] --> |Modo Interativo| BC
+        DB[Dashboard React] --> |Visualização| BC
+    end
+
+    subgraph "Núcleo BRX (brx_engine.py)"
+        BC --> CE[Motor de Consciência]
+        BC --> MS[Sistema de 8 Mentes]
+        BC --> PG[Gerador de Parâmetros]
+        BC --> ME[Sistema de Memória]
+    end
+
+    subgraph "Consciência (self_awareness.py)"
+        CE --> ID[Auto-Identidade]
+        CE --> ENV[Detecção de Hardware]
+        CE --> META[Metacognição]
+    end
+
+    subgraph "8 Mentes (eight_minds.py)"
+        MS --> D[Designer]
+        MS --> A[Analista]
+        MS --> I[Inovador]
+        MS --> C[Crítico]
+        MS --> R[Revisor]
+        MS --> V[Validador]
+        MS --> S[Estrategista]
+        MS --> M[Memória]
+        MS --> |Debate Circular| MS
+    end
+
+    subgraph "Persistência (HD/SSD)"
+        BC --> SSD[SSD: Estado e Cache]
+        BC --> HD[HD: Vocabulário e Evolução]
+    end
+
+    subgraph "Mundo Externo"
+        BC --> WEB[Pesquisa Web DuckDNS]
+    end

@@ -5,7 +5,7 @@
     "repetition": false,
     "self_similar": false,
     "complexity": 0.676574591583883,
-    "example": "Simples → Complexo → Emergente"
+    "example": "Simples  Complexo  Emergente"
   },
   "pattern_hierárquico_c1202a": {
     "type": "hierárquico",
@@ -13,6 +13,6 @@
     "repetition": true,
     "self_similar": false,
     "complexity": 0.8375760692856671,
-    "example": "Raiz → Galhos → Folhas"
+    "example": "Raiz  Galhos  Folhas"
   }
 }

@@ -48,22 +48,22 @@ class BRXChat(cmd.Cmd):
     """
     
     intro = """
-╔══════════════════════════════════════════════════════════════════════════════╗
-║                                                                              ║
-║   ██████╗ ██████╗ ██╗  ██╗     ██████╗██╗  ██╗ █████╗ ████████╗            ║
-║   ██╔══██╗██╔══██╗╚██╗██╔╝    ██╔════╝██║  ██║██╔══██╗╚══██╔══╝            ║
-║   ██████╔╝██████╔╝ ╚███╔╝     ██║     ███████║███████║   ██║               ║
-║   ██╔══██╗██╔══██╗ ██╔██╗     ██║     ██╔══██║██╔══██║   ██║               ║
-║   ██████╔╝██║  ██║██╔╝ ██╗    ╚██████╗██║  ██║██║  ██║   ██║               ║
-║   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝     ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝               ║
-║                                                                              ║
-║                    INTERFACE DE CONVERSAÇÃO                                  ║
-║                         Versão 2.0.0                                         ║
-╠══════════════════════════════════════════════════════════════════════════════╣
-║  Digite sua mensagem para conversar com o BRX.                               ║
-║  Use /help para ver os comandos disponíveis.                                 ║
-║  Use /quit para sair.                                                        ║
-╚══════════════════════════════════════════════════════════════════════════════╝
+
+                                                                              
+                            
+                     
+                                
+                                
+                                
+                                   
+                                                                              
+                    INTERFACE DE CONVERSAÇÃO                                  
+                         Versão 2.0.0                                         
+
+  Digite sua mensagem para conversar com o BRX.                               
+  Use /help para ver os comandos disponíveis.                                 
+  Use /quit para sair.                                                        
+
     """
     
     prompt = "\n[BRX] Você: "
@@ -77,7 +77,7 @@ class BRXChat(cmd.Cmd):
         self.brx = get_brx_core(str(self.storage_path))
         self.brx.load_state()
         
-        print("[BRX Chat] ✓ Sistema pronto para conversação\n")
+        print("[BRX Chat]  Sistema pronto para conversação\n")
     
     def default(self, line: str):
         """Processa mensagens do usuário"""
@@ -232,7 +232,7 @@ class BRXChat(cmd.Cmd):
             print("\nPor tipo:")
             for ptype, count in sorted(status['parameters']['by_type'].items(), 
                                        key=lambda x: x[1], reverse=True):
-                bar = "█" * int(count / max(status['parameters']['by_type'].values(), 1) * 30)
+                bar = "" * int(count / max(status['parameters']['by_type'].values(), 1) * 30)
                 print(f"  {ptype:15} {count:6} {bar}")
             print(f"{'='*60}\n")
     
@@ -304,7 +304,7 @@ class BRXChat(cmd.Cmd):
             if cycle.learning_insights:
                 print("\nInsights:")
                 for insight in cycle.learning_insights:
-                    print(f"  • {insight}")
+                    print(f"   {insight}")
             
             print(f"{'='*60}\n")
             
@@ -316,7 +316,7 @@ class BRXChat(cmd.Cmd):
         print("[BRX] Salvando estado...")
         self.brx.save_state()
         self.brx.consciousness.save_consciousness()
-        print("[BRX] ✓ Estado salvo com sucesso")
+        print("[BRX]  Estado salvo com sucesso")
     
     def do_clear(self, arg: str):
         """Limpa a tela: /clear"""
@@ -376,13 +376,13 @@ O BRX irá processar usando seu sistema de 8 mentes.
         self.brx.consciousness.save_consciousness()
         
         print("""
-╔══════════════════════════════════════════════════════════════════════════════╗
-║                                                                              ║
-║                    OBRIGADO POR CONVERSAR COM O BRX!                         ║
-║                                                                              ║
-║                    Continue evoluindo. Até breve.                            ║
-║                                                                              ║
-╚══════════════════════════════════════════════════════════════════════════════╝
+
+                                                                              
+                    OBRIGADO POR CONVERSAR COM O BRX!                         
+                                                                              
+                    Continue evoluindo. Até breve.                            
+                                                                              
+
         """)
         return True
     

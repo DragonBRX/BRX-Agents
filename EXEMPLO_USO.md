@@ -1,6 +1,6 @@
 # BRX-AGENT v2.0 - Exemplos de Uso Rápido
 
-## 🚀 Início Rápido
+##  Início Rápido
 
 ### 1. Instalação
 
@@ -32,13 +32,13 @@ python brx_autonomous.py --storage /caminho/para/storage
 ```
 
 **O que o BRX faz no modo autônomo:**
-- ✅ Gera parâmetros automaticamente (letras, palavras, frases, números)
-- ✅ Realiza debates internos entre suas 8 mentes
-- ✅ Desenvolve seu vocabulário próprio
-- ✅ Cria conceitos e padrões abstratos
-- ✅ Melhora seus próprios prompts e estratégias
-- ✅ Pesquisa informações quando curioso
-- ✅ Evolui continuamente sem sua intervenção
+-  Gera parâmetros automaticamente (letras, palavras, frases, números)
+-  Realiza debates internos entre suas 8 mentes
+-  Desenvolve seu vocabulário próprio
+-  Cria conceitos e padrões abstratos
+-  Melhora seus próprios prompts e estratégias
+-  Pesquisa informações quando curioso
+-  Evolui continuamente sem sua intervenção
 
 ### 3. Modo Chat (Converse com o BRX)
 
@@ -64,9 +64,9 @@ python brx_chat.py
 Após debate circular com 24 rodadas e 46 parâmetros gerados:
 
 Contribuições principais:
-• Designer: Estruturando 'Olá BRX, como você funciona?': ...
-• Analista: Analisando lógica de 'Olá BRX, como você funciona?': ...
-• Inovador: Explorando inovações para 'Olá BRX, como você funciona?': ...
+ Designer: Estruturando 'Olá BRX, como você funciona?': ...
+ Analista: Analisando lógica de 'Olá BRX, como você funciona?': ...
+ Inovador: Explorando inovações para 'Olá BRX, como você funciona?': ...
 ...
 
 Confiança: 84.5% | Parâmetros: 46 | Duração: 0.15s
@@ -87,7 +87,7 @@ Confiança: 84.5% | Parâmetros: 46 | Duração: 0.15s
 /quit       - Sai do chat
 ```
 
-## 💻 Exemplos de Código Python
+##  Exemplos de Código Python
 
 ### Exemplo 1: Usar o BRX no seu código
 
@@ -186,7 +186,7 @@ print(f"Curiosidade: {reflection['current_state']['curiosity']:.1%}")
 print(consciousness.generate_identity_statement())
 ```
 
-## 📊 Monitorando o BRX
+##  Monitorando o BRX
 
 ### Ver status completo
 
@@ -211,10 +211,10 @@ print(f"Novos parâmetros: {len(cycle.new_parameters)}")
 print(f"Insights: {len(cycle.learning_insights)}")
 
 for insight in cycle.learning_insights:
-    print(f"  • {insight}")
+    print(f"   {insight}")
 ```
 
-## 🔧 Personalização
+##  Personalização
 
 ### Adaptar ao hardware
 
@@ -247,24 +247,24 @@ minha_mente = MindState(
 )
 ```
 
-## 📁 Onde os dados são salvos?
+##  Onde os dados são salvos?
 
 ```
 storage/
-├── ssd/                    # Acesso rápido
-│   ├── environment.json    # Info do ambiente
-│   └── ...
-└── hd/                     # Persistência
-    ├── self_awareness.json     # Consciência BRX
-    ├── vocabulary.json         # Vocabulário
-    ├── phrases.json            # Frases geradas
-    ├── concepts.json           # Conceitos
-    ├── patterns.json           # Padrões
-    ├── search_cache.json       # Cache de pesquisas
-    └── brx_state.json          # Estado completo
+ ssd/                    # Acesso rápido
+    environment.json    # Info do ambiente
+    ...
+ hd/                     # Persistência
+     self_awareness.json     # Consciência BRX
+     vocabulary.json         # Vocabulário
+     phrases.json            # Frases geradas
+     concepts.json           # Conceitos
+     patterns.json           # Padrões
+     search_cache.json       # Cache de pesquisas
+     brx_state.json          # Estado completo
 ```
 
-## 🎯 Casos de Uso
+##  Casos de Uso
 
 ### 1. Assistente de Pesquisa
 ```python
@@ -295,7 +295,7 @@ result = brx.process_request(
 python brx_autonomous.py --interval 300 --verbose
 ```
 
-## ❓ Solução de Problemas
+##  Solução de Problemas
 
 ### Erro de importação
 ```bash
@@ -318,4 +318,4 @@ pip install -r requirements.txt --force-reinstall
 
 ---
 
-**Divirta-se explorando o BRX!** 🤖✨
+**Divirta-se explorando o BRX!** 

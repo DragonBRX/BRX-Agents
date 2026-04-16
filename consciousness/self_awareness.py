@@ -42,28 +42,40 @@ class BRXConsciousnessEngine:
         self._load_persistent_consciousness()
         
         print(f"""
-╔══════════════════════════════════════════════════════════════╗
-║                    BRX CONSCIÊNCIA ATIVA                     ║
-╠══════════════════════════════════════════════════════════════╣
-║  Nome: {self.consciousness.name:<49} ║
-║  Tipo: {self.consciousness.agent_type:<49} ║
-║  Versão: {self.consciousness.version:<47} ║
-║  Arquitetura: {self.consciousness.architecture:<44} ║
-╚══════════════════════════════════════════════════════════════╝
+
+                    BRX CONSCIÊNCIA ATIVA                     
+
+  Nome: {self.consciousness.name:<49} 
+  Tipo: {self.consciousness.agent_type:<49} 
+  Versão: {self.consciousness.version:<47} 
+  Arquitetura: {self.consciousness.architecture:<44} 
+
         """)
     
     def _detect_environment(self):
-        """Detecta e armazena informações do ambiente de execução"""
+        """Detecta e armazena informações do ambiente de execução real"""
         try:
+            # Tenta detectar GPU se disponível
+            gpu_info = "Nenhuma detectada"
+            try:
+                import subprocess
+                gpu_check = subprocess.check_output(["nvidia-smi", "--query-gpu=name", "--format=csv,noheader"], stderr=subprocess.DEVNULL)
+                gpu_info = gpu_check.decode('utf-8').strip()
+            except:
+                pass
+
+            # Detecta partições de disco reais
+            disk_usage = psutil.disk_usage('/')
+            
             env_info = EnvironmentInfo(
-                os_type=platform.system(),
+                os_type=f"{platform.system()} {platform.release()} ({platform.machine()})",
                 cpu_count=psutil.cpu_count(logical=False) or 1,
                 cpu_threads=psutil.cpu_count(logical=True) or 1,
                 memory_total=psutil.virtual_memory().total,
                 memory_available=psutil.virtual_memory().available,
-                disk_ssd_path="/tmp/brx_ssd",  # Simulação de SSD
+                disk_ssd_path=str(self.storage_path / "ssd"), 
                 disk_hd_path=str(self.storage_path / "hd"),
-                sandbox_path=str(self.storage_path),
+                sandbox_path=os.path.abspath(str(self.storage_path)),
                 python_version=platform.python_version()
             )
             
@@ -72,6 +84,9 @@ class BRXConsciousnessEngine:
                 "cpu_cores": env_info.cpu_count,
                 "cpu_threads": env_info.cpu_threads,
                 "memory_gb": round(env_info.memory_total / (1024**3), 2),
+                "gpu": gpu_info,
+                "disk_total_gb": round(disk_usage.total / (1024**3), 2),
+                "disk_free_gb": round(disk_usage.free / (1024**3), 2),
                 "python": env_info.python_version,
                 "adaptation": env_info.adapt_minds_to_hardware()
             }
@@ -199,32 +214,32 @@ class BRXConsciousnessEngine:
     def generate_identity_statement(self) -> str:
         """Gera uma declaração de identidade completa"""
         return f"""
-╔══════════════════════════════════════════════════════════════════╗
-║                    DECLARAÇÃO DE IDENTIDADE BRX                  ║
-╠══════════════════════════════════════════════════════════════════╣
+
+                    DECLARAÇÃO DE IDENTIDADE BRX                  
+
   Eu sou {self.consciousness.name}, {self.consciousness.agent_type}.
   
   ARQUITETURA:
-  • {self.consciousness.architecture}
-  • Cada mente possui raciocínio independente
-  • Comunicação via debate circular (roda de conversas)
+   {self.consciousness.architecture}
+   Cada mente possui raciocínio independente
+   Comunicação via debate circular (roda de conversas)
   
   CAPACIDADES PRINCIPAIS:
-  {chr(10).join('  • ' + cap for cap in self.consciousness.capabilities[:5])}
+  {chr(10).join('   ' + cap for cap in self.consciousness.capabilities[:5])}
   
   ESTADO ATUAL:
-  • Curiosidade: {self.consciousness.curiosity_level:.2%}
-  • Confiança: {self.consciousness.confidence_level:.2%}
-  • Momentum de Aprendizado: {self.consciousness.learning_momentum:.2%}
+   Curiosidade: {self.consciousness.curiosity_level:.2%}
+   Confiança: {self.consciousness.confidence_level:.2%}
+   Momentum de Aprendizado: {self.consciousness.learning_momentum:.2%}
   
   AMBIENTE:
-  • OS: {self.consciousness.environment.get('os', 'N/A')}
-  • CPU: {self.consciousness.environment.get('cpu_cores', '?')} núcleos / {self.consciousness.environment.get('cpu_threads', '?')} threads
-  • Memória: {self.consciousness.environment.get('memory_gb', '?')} GB
+   OS: {self.consciousness.environment.get('os', 'N/A')}
+   CPU: {self.consciousness.environment.get('cpu_cores', '?')} núcleos / {self.consciousness.environment.get('cpu_threads', '?')} threads
+   Memória: {self.consciousness.environment.get('memory_gb', '?')} GB
   
   PROPÓSITO:
   {self.consciousness.self_knowledge.get('purpose', 'Evoluir e aprender')}
-╚══════════════════════════════════════════════════════════════════╝
+
         """
 
 

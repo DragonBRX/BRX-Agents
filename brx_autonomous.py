@@ -67,29 +67,29 @@ class BRXAutonomousRunner:
     def _print_banner(self):
         """Imprime banner de inicialização"""
         print("""
-╔══════════════════════════════════════════════════════════════════════════════╗
-║                                                                              ║
-║           ██████╗ ██████╗ ██╗  ██╗     █████╗ ██╗   ██╗████████╗ ██████╗     ║
-║           ██╔══██╗██╔══██╗╚██╗██╔╝    ██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗    ║
-║           ██████╔╝██████╔╝ ╚███╔╝     ███████║██║   ██║   ██║   ██║   ██║    ║
-║           ██╔══██╗██╔══██╗ ██╔██╗     ██╔══██║██║   ██║   ██║   ██║   ██║    ║
-║           ██████╔╝██║  ██║██╔╝ ██╗    ██║  ██║╚██████╔╝   ██║   ╚██████╔╝    ║
-║           ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝     ║
-║                                                                              ║
-║                    MODO AUTÔNOMO CONTÍNUO ATIVADO                            ║
-║                                                                              ║
-╠══════════════════════════════════════════════════════════════════════════════╣
-║  O BRX está operando de forma completamente autônoma.                        ║
-║  Ele irá:                                                                    ║
-║    • Gerar parâmetros automaticamente (letras, palavras, frases, números)    ║
-║    • Conduzir debates internos entre suas 8 mentes                           ║
-║    • Desenvolver seu próprio vocabulário e conceitos                         ║
-║    • Melhorar seus prompts e estratégias de evolução                         ║
-║    • Pesquisar informações quando necessário                                 ║
-║    • Aprender e evoluir continuamente                                        ║
-╠══════════════════════════════════════════════════════════════════════════════╣
-║  Pressione Ctrl+C para encerrar graciosamente                                ║
-╚══════════════════════════════════════════════════════════════════════════════╝
+
+                                                                              
+                              
+                      
+                                 
+                                 
+                              
+                                    
+                                                                              
+                    MODO AUTÔNOMO CONTÍNUO ATIVADO                            
+                                                                              
+
+  O BRX está operando de forma completamente autônoma.                        
+  Ele irá:                                                                    
+     Gerar parâmetros automaticamente (letras, palavras, frases, números)    
+     Conduzir debates internos entre suas 8 mentes                           
+     Desenvolver seu próprio vocabulário e conceitos                         
+     Melhorar seus prompts e estratégias de evolução                         
+     Pesquisar informações quando necessário                                 
+     Aprender e evoluir continuamente                                        
+
+  Pressione Ctrl+C para encerrar graciosamente                                
+
         """)
     
     def _generate_auto_topic(self) -> str:
@@ -154,21 +154,21 @@ class BRXAutonomousRunner:
         
         # Log do ciclo
         print(f"""
-┌─────────────────────────────────────────────────────────────┐
-│ CICLO DE EVOLUÇÃO #{cycle.cycle_number:<5}                               │
-├─────────────────────────────────────────────────────────────┤
-│ Duração: {datetime.now().strftime('%Y-%m-%d %H:%M:%S'):<49} │
-│ Novos parâmetros: {len(cycle.new_parameters):<4}                                          │
-│ Insights: {len(cycle.learning_insights):<4}                                             │
-│ Total acumulado: {self.total_params_generated:<6}                                     │
-└─────────────────────────────────────────────────────────────┘
+
+ CICLO DE EVOLUÇÃO #{cycle.cycle_number:<5}                               
+
+ Duração: {datetime.now().strftime('%Y-%m-%d %H:%M:%S'):<49} 
+ Novos parâmetros: {len(cycle.new_parameters):<4}                                          
+ Insights: {len(cycle.learning_insights):<4}                                             
+ Total acumulado: {self.total_params_generated:<6}                                     
+
         """)
         
         # Mostra insights se houver
         if cycle.learning_insights and self.verbose:
             print("[BRX Insights]")
             for insight in cycle.learning_insights[:3]:
-                print(f"  • {insight}")
+                print(f"   {insight}")
     
     def _print_status(self):
         """Imprime status atual do sistema"""
@@ -180,14 +180,14 @@ class BRXAutonomousRunner:
         seconds = int(uptime % 60)
         
         print(f"""
-┌─────────────────────────────────────────────────────────────┐
-│ STATUS DO BRX                                               │
-├─────────────────────────────────────────────────────────────┤
-│ Uptime: {hours:02d}h {minutes:02d}m {seconds:02d}s                                      │
-│ Ciclos: {self.cycles_completed:<5} | Parâmetros: {status['parameters']['total']:<6}        │
-│ Vocabulário: {status['vocabulary']['size']:<5} | Mentes ativas: {status['minds']['active']}/8   │
-│ Curiosidade: {status['consciousness']['curiosity']:.1%} | Confiança: {status['consciousness']['confidence']:.1%}        │
-└─────────────────────────────────────────────────────────────┘
+
+ STATUS DO BRX                                               
+
+ Uptime: {hours:02d}h {minutes:02d}m {seconds:02d}s                                      
+ Ciclos: {self.cycles_completed:<5} | Parâmetros: {status['parameters']['total']:<6}        
+ Vocabulário: {status['vocabulary']['size']:<5} | Mentes ativas: {status['minds']['active']}/8   
+ Curiosidade: {status['consciousness']['curiosity']:.1%} | Confiança: {status['consciousness']['confidence']:.1%}        
+
         """)
     
     def run(self):
@@ -267,14 +267,14 @@ class BRXAutonomousRunner:
         uptime = time.time() - self.start_time if self.start_time else 0
         
         print(f"""
-╔══════════════════════════════════════════════════════════════════════════════╗
-║                         BRX AUTÔNOMO ENCERRADO                               ║
-╠══════════════════════════════════════════════════════════════════════════════╣
-║  Uptime total: {int(uptime)} segundos                                          ║
-║  Ciclos completados: {self.cycles_completed}                                   ║
-║  Parâmetros gerados: {self.total_params_generated}                             ║
-║  Estado salvo em: {self.storage_path / 'hd'}                                   ║
-╚══════════════════════════════════════════════════════════════════════════════╝
+
+                         BRX AUTÔNOMO ENCERRADO                               
+
+  Uptime total: {int(uptime)} segundos                                          
+  Ciclos completados: {self.cycles_completed}                                   
+  Parâmetros gerados: {self.total_params_generated}                             
+  Estado salvo em: {self.storage_path / 'hd'}                                   
+
         """)
 
 

@@ -62,18 +62,18 @@ class BRXCore:
         (self.storage_path / "logs").mkdir(exist_ok=True)
         
         print("""
-╔══════════════════════════════════════════════════════════════════════════════╗
-║                                                                              ║
-║   ██████╗ ██████╗ ██╗  ██╗      █████╗  ██████╗ ███████╗███╗   ██╗████████╗ ║
-║   ██╔══██╗██╔══██╗╚██╗██╔╝     ██╔══██╗██╔════╝ ██╔════╝████╗  ██║╚══██╔══╝ ║
-║   ██████╔╝██████╔╝ ╚███╔╝█████╗███████║██║  ███╗█████╗  ██╔██╗ ██║   ██║    ║
-║   ██╔══██╗██╔══██╗ ██╔██╗╚════╝██╔══██║██║   ██║██╔══╝  ██║╚██╗██║   ██║    ║
-║   ██████╔╝██║  ██║██╔╝ ██╗     ██║  ██║╚██████╔╝███████╗██║ ╚████║   ██║    ║
-║   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝    ║
-║                                                                              ║
-║                    AGENTE AUTO-EVOLUTIVO MULTI-CÉREBRO                       ║
-║                              Versão 2.0.0                                    ║
-╚══════════════════════════════════════════════════════════════════════════════╝
+
+                                                                              
+                    
+            
+                
+                
+                     
+                          
+                                                                              
+                    AGENTE AUTO-EVOLUTIVO MULTI-CÉREBRO                       
+                              Versão 2.0.0                                    
+
         """)
         
         # Inicializa componentes
@@ -81,21 +81,21 @@ class BRXCore:
         
         # 1. Consciência
         self.consciousness = get_consciousness_engine(str(self.storage_path))
-        print(f"[BRX Core] ✓ Consciência ativa: {self.consciousness.consciousness.name}")
+        print(f"[BRX Core]  Consciência ativa: {self.consciousness.consciousness.name}")
         
         # 2. Sistema de 8 Mentes (adapta ao hardware)
         adaptation = self.consciousness.get_environment_adaptation()
         active_minds = adaptation.get("active_minds", 8)
         self.minds = EightMindsSystem(active_minds=active_minds)
-        print(f"[BRX Core] ✓ Sistema de {active_minds} mentes inicializado")
+        print(f"[BRX Core]  Sistema de {active_minds} mentes inicializado")
         
         # 3. Gerador de Parâmetros
         self.param_generator = BRXParameterGenerator(str(self.storage_path))
-        print(f"[BRX Core] ✓ Gerador de parâmetros ativo (vocabulário: {self.param_generator.get_vocabulary_size()} palavras)")
+        print(f"[BRX Core]  Gerador de parâmetros ativo (vocabulário: {self.param_generator.get_vocabulary_size()} palavras)")
         
         # 4. Pesquisador DuckDNS
         self.searcher = get_searcher(str(self.storage_path / "hd" / "search_cache.json"))
-        print(f"[BRX Core] ✓ Pesquisador DuckDNS pronto")
+        print(f"[BRX Core]  Pesquisador DuckDNS pronto")
         
         # Estado do sistema
         self.state = BRXState()
