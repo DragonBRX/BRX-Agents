@@ -50,8 +50,13 @@ echo "1) Modo Autônomo (Geração de Parâmetros e Evolução)"
 echo "2) Modo Chat (Conversação Direta)"
 echo "----------------------------------------------------------------"
 
-# Corrigido para ler entrada do teclado mesmo via curl | bash
-read -p "Opção (1 ou 2): " choice < /dev/tty
+# Tenta ler do terminal (/dev/tty) ou da entrada padrão (stdin) se o terminal não estiver disponível
+if [ -t 0 ]; then
+    read -p "Opção (1 ou 2): " choice
+else
+    # Se estiver vindo via pipe (curl | bash), tenta ler do terminal diretamente
+    read -p "Opção (1 ou 2): " choice < /dev/tty || read -p "Opção (1 ou 2): " choice
+fi
 
 case $choice in
     1)
