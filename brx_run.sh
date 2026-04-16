@@ -13,8 +13,12 @@ echo "        INICIALIZADOR AUTOMÁTICO BRX-AGENT v2.0"
 echo "----------------------------------------------------------------"
 
 # 1. Sincronização do Repositório
-if [ -d "$REPO_DIR" ]; then
-    echo "[1/4] Atualizando repositório existente..."
+if [ -d ".git" ] && [ "$(basename $(git rev-parse --show-toplevel))" == "BRX-Agents" ]; then
+    echo "[1/4] Já estamos dentro de BRX-Agents. Atualizando..."
+    git fetch origin
+    git reset --hard origin/main
+elif [ -d "$REPO_DIR" ]; then
+    echo "[1/4] Atualizando repositório existente na pasta $REPO_DIR..."
     cd "$REPO_DIR"
     git fetch origin
     git reset --hard origin/main
@@ -31,7 +35,7 @@ if [ ! -d "venv" ]; then
 fi
 source venv/bin/activate
 
-# 3. Instalação de Dependências
+# 3. Instalar Dependências
 echo "[3/4] Instalando/Atualizando dependências..."
 pip install --upgrade pip > /dev/null
 pip install psutil requests > /dev/null

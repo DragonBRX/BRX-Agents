@@ -46,7 +46,7 @@ O BRX é um agente de inteligência artificial com arquitetura única de **8 men
 ##  Estrutura do Projeto
 
 ```
-brx_agent_v2/
+BRX-Agents/
  core/
     __init__.py
     types.py              # Tipos fundamentais do sistema
@@ -83,7 +83,7 @@ curl -s https://raw.githubusercontent.com/DragonBRX/BRX-Agents/main/brx_run.sh |
 ```
 
 ```bash
-cd brx_agent_v2
+cd BRX-Agents
 ```
 
 ### 2. Instale as dependências
