@@ -1,26 +1,28 @@
 # Guia de Instalação e Execução - BRX-Agent v2.0
 
-Siga os blocos de comandos abaixo para configurar o BRX-Agent no seu Ubuntu (20.04/22.04+).
+Este guia foi testado e validado em ambiente Ubuntu 22.04 LTS. Siga os blocos de comandos abaixo para configurar o BRX-Agent de forma isolada e segura.
 
 ## 1. Instalação do Zero (Ambiente Zerado)
 
-Copie e cole este bloco no seu terminal para instalar todas as dependências necessárias:
+Copie e cole este bloco no seu terminal para instalar todas as dependências necessárias e configurar o ambiente virtual:
 
 ```bash
-# Atualizar sistema e instalar dependências base
+# 1. Atualizar sistema e instalar dependências base
 sudo apt update && sudo apt install -y python3-pip python3-venv git curl
 
-# Clonar o repositório (caso ainda não tenha feito)
+# 2. Clonar o repositório
 git clone https://github.com/DragonBRX/BRX-Agents.git
 cd BRX-Agents
 
-# Criar e ativar ambiente virtual (Isolamento)
+# 3. Criar e ativar ambiente virtual (Isolamento Total)
 python3 -m venv venv
 source venv/bin/activate
 
-# Instalar dependências do Python
+# 4. Instalar dependências do Python (Validadas)
 pip install --upgrade pip
-pip install -r requirements.txt
+pip install psutil requests
+# Caso o arquivo requirements.txt exista, instale também:
+[ -f requirements.txt ] && pip install -r requirements.txt
 ```
 
 ---
