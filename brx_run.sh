@@ -9,6 +9,18 @@ REPO_URL="https://github.com/DragonBRX/BRX-Agents.git"
 REPO_DIR="BRX-Agents"
 # Caminho padrao para o HD externo do usuario
 EXTERNAL_STORAGE="/media/dragonscp/Novo volume/modelo BRX"
+MOUNT_POINT="/media/dragonscp/Novo volume"
+
+# Tenta criar a pasta no HD externo se o disco estiver montado
+if [ -d "$MOUNT_POINT" ]; then
+    echo "[INFO] Detectado ponto de montagem: $MOUNT_POINT"
+    # Tenta criar a pasta e verifica se temos permissao de escrita
+    if mkdir -p "$EXTERNAL_STORAGE" 2>/dev/null && [ -w "$EXTERNAL_STORAGE" ]; then
+        echo "[INFO] Pasta de armazenamento preparada no HD externo."
+    else
+        echo "[AVISO] Nao foi possivel criar ou escrever na pasta do HD externo. Verifique as permissoes."
+    fi
+fi
 
 echo "----------------------------------------------------------------"
 echo "        INICIALIZADOR AUTOMÁTICO BRX-AGENT v2.0"

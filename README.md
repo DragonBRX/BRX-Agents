@@ -2,15 +2,15 @@
 
 ![Arquitetura BRX](architecture.png)
 
-## Agente Auto-Evolutivo Multi-Cerebro
+## Agente Auto-Evolutivo Multi-Cérebro
 
-O BRX e um agente de inteligencia artificial com arquitetura unica de **8 mentes independentes** que funcionam como uma equipe de especialistas. Cada mente tem seu proprio raciocinio, mas se comunicam em uma **roda de conversas** para alcancar consenso.
+O BRX é um agente de inteligência artificial com arquitetura única de **8 mentes independentes** que funcionam como uma equipe de especialistas. Cada mente tem seu próprio raciocínio, mas se comunicam em uma **roda de conversas** para alcançar consenso.
 
 ---
 
-## Inicializacao Rapida (Ubuntu 22.04+)
+## 🚀 Comando Único de Instalação e Execução
 
-Para instalar e rodar o BRX-Agent automaticamente, use o comando mestre abaixo. Ele configura o ambiente isolado, resolve erros de permissao e detecta automaticamente o seu HD externo para armazenamento:
+Copie e cole o comando abaixo no seu terminal Ubuntu para instalar, atualizar e rodar o BRX-Agent. Ele configura o ambiente isolado, resolve erros de permissão e detecta automaticamente o seu HD externo:
 
 ```bash
 curl -sO https://raw.githubusercontent.com/DragonBRX/BRX-Agents/main/brx_run.sh && chmod +x brx_run.sh && ./brx_run.sh
@@ -20,86 +20,59 @@ curl -sO https://raw.githubusercontent.com/DragonBRX/BRX-Agents/main/brx_run.sh 
 
 ## Armazenamento em HD Externo
 
-O BRX-Agent esta configurado para priorizar o armazenamento no seu HD externo:
+O BRX-Agent está configurado para priorizar o armazenamento no seu HD externo:
 **Caminho:** `/media/dragonscp/Novo volume/modelo BRX`
 
-Se o HD estiver montado, o sistema salvara automaticamente:
-- Todo o vocabulario desenvolvido.
-- O estado de evolucao (parametros e mentes).
-- Memorias e logs de treinamento.
+Se o HD estiver montado, o sistema salvará automaticamente:
+- Todo o vocabulário desenvolvido.
+- O estado de evolução (parâmetros e mentes).
+- Memórias e logs de treinamento.
 
-Se o HD nao estiver conectado, o sistema usara a pasta local `storage/` como backup.
+Se o HD não estiver conectado, o sistema usará a pasta local `storage/` como backup.
 
 ---
 
-## Solucao para o Erro: externally-managed-environment
+## Como verificar se está salvando no HD?
+Ao iniciar o modelo com o comando acima, você verá a mensagem:
+`[INFO] Usando HD externo para armazenamento: /media/dragonscp/Novo volume/modelo BRX`
 
-Se voce tentar usar o `pip` e receber este erro, e porque o Ubuntu esta protegendo o sistema. Siga estes passos exatos para resolver:
-
-### 1. Criar o Ambiente (Se ainda nao existir)
+Você também pode conferir se os arquivos estão sendo criados rodando:
 ```bash
+ls -la "/media/dragonscp/Novo volume/modelo BRX/hd"
+```
+
+---
+
+## Solução para o Erro: externally-managed-environment
+
+O comando único acima já resolve este erro automaticamente. Caso você queira rodar comandos manuais (como `pip install`), **você DEVE usar o ambiente virtual** criado pelo script:
+
+```bash
+# Entre na pasta do projeto
 cd BRX-Agents
-python3 -m venv venv
-```
 
-### 2. Instalar usando o modulo do Python (O Segredo)
-Em vez de usar apenas `pip`, use o comando abaixo que força o uso do ambiente isolado:
-```bash
+# Instale usando o módulo do Python (O Segredo)
 ./venv/bin/python3 -m pip install -r requirements.txt
-```
 
-### 3. Rodar o Modelo
-```bash
-# Modo Autonomo
-./venv/bin/python3 brx_autonomous.py
-
-# Modo Chat
-./venv/bin/python3 brx_chat.py
+# Rode o Modelo manualmente se desejar
+./venv/bin/python3 brx_autonomous.py  # Geração/Treinamento
+./venv/bin/python3 brx_chat.py        # Chat Interativo
 ```
 
 ---
 
-## Caracteristicas Principais
+## Características Principais
 
 ### Arquitetura de 8 Mentes
-- **Designer**: Estrutura e padroes de dados
-- **Analista**: Logica e consistencia tecnica
+- **Designer**: Estrutura e padrões de dados
+- **Analista**: Lógica e consistência técnica
 - **Inovador**: Abordagens criativas e novas perspectivas
-- **Critico**: Identificacao de falhas e riscos (Red Teaming)
+- **Crítico**: Identificação de falhas e riscos (Red Teaming)
 - **Revisor**: Qualidade textual e clareza
-- **Validador**: Coerencia tematica e precisao
-- **Estrategista**: Planejamento e utilidade pratica
-- **Memoria**: Contexto historico e persistencia
-
-### Auto-Evolucao
-- Gera **proprios parametros**: letras, palavras, frases, numeros, conceitos
-- Desenvolve **vocabulario proprio** automaticamente
-- Melhora **prompts e estrategias** sem intervencao humana
-- Realiza **debates internos** para auto-aperfeicoamento
+- **Validador**: Coerência temática e precisão
+- **Estrategista**: Planejamento e utilidade prática
+- **Memória**: Contexto histórico e persistência
 
 ---
 
-## Estrutura do Projeto
-
-```
-BRX-Agents/
- core/
-    types.py              # Tipos fundamentais do sistema
-    brx_engine.py         # Nucleo principal do BRX
- consciousness/
-    self_awareness.py     # Sistema de consciencia
- minds/
-    eight_minds.py        # Sistema de 8 mentes
- parameters/
-    auto_generator.py     # Gerador automatico de parametros
- search/
-    duckdns_search.py     # Pesquisa DuckDuckGo
- storage/                  # Diretorio de armazenamento (SSD/HD)
- brx_autonomous.py         # MODO AUTONOMO (Geracao)
- brx_chat.py               # MODO CHAT (Conversacao)
- brx_run.sh                # SCRIPT MESTRE (Instalacao/Execucao)
-```
-
----
-
-**"A inteligencia nao e apenas processar informacoes, mas evoluir a forma como processamos."** - BRX
+**"A inteligência não é apenas processar informações, mas evoluir a forma como processamos."** - BRX
