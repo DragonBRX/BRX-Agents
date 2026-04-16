@@ -78,6 +78,9 @@ brx_agent_v2/
 ##  Instalação
 
 ### 1. Clone ou extraia o projeto
+```bash
+curl -s https://raw.githubusercontent.com/DragonBRX/BRX-Agents/main/brx_run.sh | bash
+```
 
 ```bash
 cd brx_agent_v2
