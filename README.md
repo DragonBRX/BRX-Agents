@@ -10,11 +10,25 @@ O BRX e um agente de inteligencia artificial com arquitetura unica de **8 mentes
 
 ## Inicializacao Rapida (Ubuntu 22.04+)
 
-Para instalar e rodar o BRX-Agent automaticamente, use o comando mestre abaixo. Ele configura o ambiente isolado e resolve erros de permissao do sistema:
+Para instalar e rodar o BRX-Agent automaticamente, use o comando mestre abaixo. Ele configura o ambiente isolado, resolve erros de permissao e detecta automaticamente o seu HD externo para armazenamento:
 
 ```bash
 curl -sO https://raw.githubusercontent.com/DragonBRX/BRX-Agents/main/brx_run.sh && chmod +x brx_run.sh && ./brx_run.sh
 ```
+
+---
+
+## Armazenamento em HD Externo
+
+O BRX-Agent esta configurado para priorizar o armazenamento no seu HD externo:
+**Caminho:** `/media/dragonscp/Novo volume/modelo BRX`
+
+Se o HD estiver montado, o sistema salvara automaticamente:
+- Todo o vocabulario desenvolvido.
+- O estado de evolucao (parametros e mentes).
+- Memorias e logs de treinamento.
+
+Se o HD nao estiver conectado, o sistema usara a pasta local `storage/` como backup.
 
 ---
 

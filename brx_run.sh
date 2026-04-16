@@ -7,6 +7,8 @@ set -e
 
 REPO_URL="https://github.com/DragonBRX/BRX-Agents.git"
 REPO_DIR="BRX-Agents"
+# Caminho padrao para o HD externo do usuario
+EXTERNAL_STORAGE="/media/dragonscp/Novo volume/modelo BRX"
 
 echo "----------------------------------------------------------------"
 echo "        INICIALIZADOR AUTOMÁTICO BRX-AGENT v2.0"
@@ -66,11 +68,24 @@ fi
 case $choice in
     1)
         echo "Iniciando Modo Autônomo..."
-        $PYTHON_EXEC brx_autonomous.py --interval 30 --verbose
+        # Verifica se o HD externo esta montado, caso contrario usa o padrao local
+        if [ -d "$EXTERNAL_STORAGE" ]; then
+            echo "[INFO] Usando HD externo para armazenamento: $EXTERNAL_STORAGE"
+            $PYTHON_EXEC brx_autonomous.py --interval 30 --verbose --storage "$EXTERNAL_STORAGE"
+        else
+            echo "[AVISO] HD externo nao encontrado. Usando armazenamento local."
+            $PYTHON_EXEC brx_autonomous.py --interval 30 --verbose
+        fi
         ;;
     2)
         echo "Iniciando Modo Chat..."
-        $PYTHON_EXEC brx_chat.py
+        if [ -d "$EXTERNAL_STORAGE" ]; then
+            echo "[INFO] Usando HD externo para carregar dados: $EXTERNAL_STORAGE"
+            $PYTHON_EXEC brx_chat.py --storage "$EXTERNAL_STORAGE"
+        else
+            echo "[AVISO] HD externo nao encontrado. Usando armazenamento local."
+            $PYTHON_EXEC brx_chat.py
+        fi
         ;;
     *)
         echo "Opção inválida ($choice). Encerrando."
