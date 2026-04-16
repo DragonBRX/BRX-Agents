@@ -1,0 +1,23 @@
+{
+  "environment": {
+    "os": "Linux",
+    "cpu_cores": 1,
+    "cpu_threads": 2,
+    "memory_gb": 4.0,
+    "python": "3.12.12",
+    "adaptation": {
+      "active_minds": 4,
+      "debate_rounds": 2,
+      "processing_depth": "light"
+    }
+  },
+  "system_info": {
+    "detected_at": "2026-04-17T00:19:42.126317",
+    "process_id": 771,
+    "working_directory": "/mnt/okcomputer/output/brx_agent_v2",
+    "storage_paths": {
+      "ssd": "/tmp/brx_ssd",
+      "hd": "test_storage/hd"
+    }
+  }
+}

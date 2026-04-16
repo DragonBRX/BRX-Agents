@@ -1,0 +1,85 @@
+{
+  "auto_causa": {
+    "name": "auto_causa",
+    "base": "causa",
+    "complexity": 0.7040617835651122,
+    "abstraction_level": 0.6230480838536829,
+    "related_concepts": [
+      "efeito",
+      "razão",
+      "ciclo",
+      "processo"
+    ],
+    "properties": {
+      "dynamic": false,
+      "recursive": false,
+      "emergent": true
+    }
+  },
+  "super_lógica": {
+    "name": "super_lógica",
+    "base": "lógica",
+    "complexity": 0.34176310088440676,
+    "abstraction_level": 0.8874485417904983,
+    "related_concepts": [
+      "continuidade",
+      "compreensão",
+      "aprendizado",
+      "conexão"
+    ],
+    "properties": {
+      "dynamic": true,
+      "recursive": true,
+      "emergent": false
+    }
+  },
+  "super_criatividade": {
+    "name": "super_criatividade",
+    "base": "criatividade",
+    "complexity": 0.43732415305469236,
+    "abstraction_level": 0.8596588017819324,
+    "related_concepts": [
+      "intuição",
+      "balanceamento",
+      "compreensão"
+    ],
+    "properties": {
+      "dynamic": false,
+      "recursive": false,
+      "emergent": false
+    }
+  },
+  "super_ordem": {
+    "name": "super_ordem",
+    "base": "ordem",
+    "complexity": 0.8762242135853695,
+    "abstraction_level": 0.5542456648651637,
+    "related_concepts": [
+      "aprendizado",
+      "conhecimento",
+      "evolução"
+    ],
+    "properties": {
+      "dynamic": true,
+      "recursive": true,
+      "emergent": false
+    }
+  },
+  "meta_continuidade": {
+    "name": "meta_continuidade",
+    "base": "continuidade",
+    "complexity": 0.6138370460667142,
+    "abstraction_level": 0.9070756224993044,
+    "related_concepts": [
+      "entendimento",
+      "consciência",
+      "intuição",
+      "crescimento"
+    ],
+    "properties": {
+      "dynamic": true,
+      "recursive": false,
+      "emergent": true
+    }
+  }
+}

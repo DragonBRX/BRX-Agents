@@ -1,0 +1,18 @@
+{
+  "pattern_emergente_1c5f5f": {
+    "type": "emergente",
+    "elements": 9,
+    "repetition": false,
+    "self_similar": false,
+    "complexity": 0.676574591583883,
+    "example": "Simples → Complexo → Emergente"
+  },
+  "pattern_hierárquico_c1202a": {
+    "type": "hierárquico",
+    "elements": 10,
+    "repetition": true,
+    "self_similar": false,
+    "complexity": 0.8375760692856671,
+    "example": "Raiz → Galhos → Folhas"
+  }
+}

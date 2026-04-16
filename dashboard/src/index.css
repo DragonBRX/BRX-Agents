@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 6%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 6%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 187 94% 43%;
+    --primary-foreground: 222 47% 4%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 187 94% 43%;
+    --accent-foreground: 222 47% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 187 94% 43%;
+    --radius: 0.5rem;
+    
+    /* BRX-ENGINE Custom Colors */
+    --brx-cyan: 187 94% 43%;
+    --brx-purple: 262 83% 58%;
+    --brx-green: 142 71% 45%;
+    --brx-yellow: 48 96% 53%;
+    --brx-orange: 27 96% 61%;
+    --brx-red: 0 84% 60%;
+    --brx-blue: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  /* BRX-ENGINE Animations */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 5px hsl(var(--brx-cyan) / 0.5),
+                  0 0 10px hsl(var(--brx-cyan) / 0.3),
+                  0 0 15px hsl(var(--brx-cyan) / 0.1);
+    }
+    50% {
+      box-shadow: 0 0 10px hsl(var(--brx-cyan) / 0.8),
+                  0 0 20px hsl(var(--brx-cyan) / 0.5),
+                  0 0 30px hsl(var(--brx-cyan) / 0.3);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  @keyframes scan {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-scan {
+    animation: scan 2s linear infinite;
+  }
+  
+  /* Custom Scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 3px;
+  }
+  
+  /* Glass Effect */
+  .glass {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--brx-cyan)), hsl(var(--brx-purple)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Border Glow */
+  .border-glow {
+    border-color: hsl(var(--brx-cyan) / 0.5);
+    box-shadow: 0 0 10px hsl(var(--brx-cyan) / 0.2);
+  }
+  
+  /* Grid Pattern Background */
+  .bg-grid {
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  /* Dot Pattern Background */
+  .bg-dots {
+    background-image: radial-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px);
+    background-size: 10px 10px;
+  }
+}
+
+/* Component Overrides */
+@layer components {
+  .card-brx {
+    @apply bg-card border border-border rounded-lg;
+    @apply transition-all duration-200;
+  }
+  
+  .card-brx:hover {
+    @apply border-primary/50;
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.1);
+  }
+  
+  .btn-brx {
+    @apply inline-flex items-center justify-center;
+    @apply px-4 py-2 rounded-md;
+    @apply font-medium text-sm;
+    @apply transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/50;
+  }
+  
+  .input-brx {
+    @apply bg-background border border-input rounded-md;
+    @apply px-3 py-2 text-sm;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary;
+    @apply placeholder:text-muted-foreground;
+  }
+  
+  .badge-brx {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+}
