@@ -1,80 +1,85 @@
-# Guia de Instalação e Execução - BRX-Agent v2.0
+# Guia de Instalacao Detalhado - BRX-Agent v2.0
 
-Este guia foi testado e validado em ambiente Ubuntu 22.04 LTS. Siga os blocos de comandos abaixo para configurar o BRX-Agent de forma isolada e segura.
+Este guia explica como configurar o BRX-Agent no Ubuntu 22.04, 24.04 ou superior, resolvendo o bloqueio de instalacao de pacotes do sistema.
 
-## 1. Instalação do Zero (Ambiente Zerado)
+## Metodo Recomendado (Automatico)
 
-Copie e cole este bloco no seu terminal para instalar todas as dependências necessárias e configurar o ambiente virtual:
+Use o script mestre que cuida de toda a configuracao do ambiente isolado:
 
 ```bash
-# 1. Atualizar sistema e instalar dependências base
-sudo apt update && sudo apt install -y python3-pip python3-venv git curl
+curl -sO https://raw.githubusercontent.com/DragonBRX/BRX-Agents/main/brx_run.sh && chmod +x brx_run.sh && ./brx_run.sh
+```
 
-# 2. Clonar o repositório
+---
+
+## Metodo Manual (Passo a Passo)
+
+Se voce preferir configurar manualmente, siga estes passos rigorosamente para evitar o erro `externally-managed-environment`.
+
+### 1. Preparar o Sistema
+```bash
+sudo apt update && sudo apt install -y python3-pip python3-venv git curl
+```
+
+### 2. Clonar e Entrar na Pasta
+```bash
 git clone https://github.com/DragonBRX/BRX-Agents.git
 cd BRX-Agents
+```
 
-# 3. Criar e ativar ambiente virtual (Isolamento Total)
+### 3. Criar o Ambiente Virtual (VENV)
+O Ubuntu moderno nao permite instalar pacotes Python fora de um ambiente isolado.
+```bash
 python3 -m venv venv
-source venv/bin/activate
+```
 
-# 4. Instalar dependências do Python (Validadas)
+### 4. Ativar o Ambiente (CRUCIAL)
+Voce deve rodar este comando **toda vez** que abrir um novo terminal para trabalhar no projeto:
+```bash
+source venv/bin/activate
+```
+*Apos rodar, voce vera `(venv)` no inicio do seu prompt do terminal.*
+
+### 5. Instalar Dependencias
+Agora que o ambiente esta ativo, o `pip` funcionara sem erros:
+```bash
 pip install --upgrade pip
 pip install psutil requests
-# Caso o arquivo requirements.txt exista, instale também:
 [ -f requirements.txt ] && pip install -r requirements.txt
 ```
 
 ---
 
-## 2. Modo de Execução 1: Geração Autônoma (Treinamento)
+## Como Executar
 
-Este modo faz o BRX gerar parâmetros, pesquisar na web e evoluir sozinho. Ideal para deixar rodando em background.
+Sempre garanta que o ambiente esta ativo antes de rodar:
 
+### Modo 1: Geracao Autonoma (Treinamento)
 ```bash
-# Ative o ambiente (se já não estiver ativo)
 source venv/bin/activate
-
-# Iniciar o modo autônomo (intervalo de 30 segundos entre ciclos)
 python3 brx_autonomous.py --interval 30 --verbose
 ```
 
----
-
-## 3. Modo de Execução 2: Chat Interativo
-
-Use este modo para conversar com o BRX e usar o conhecimento que ele já adquiriu no modo de geração.
-
+### Modo 2: Chat Interativo
 ```bash
-# Ative o ambiente (se já não estiver ativo)
 source venv/bin/activate
-
-# Iniciar o chat interativo
 python3 brx_chat.py
 ```
 
-No chat, você pode usar comandos como:
-- `/status` : Ver o nível de evolução e hardware detectado.
-- `/search <termo>` : Forçar uma pesquisa web.
-- `/evolve` : Forçar um ciclo de evolução imediato.
-- `/quit` : Sair do chat.
+---
+
+## Solucao de Problemas
+
+### Erro: `externally-managed-environment`
+**Causa:** Voce tentou usar o `pip` sem ativar o `venv`.
+**Solução:** Rode `source venv/bin/activate` e tente novamente.
+
+### Erro: `Opcao invalida` no script
+**Causa:** Rodar o script via `curl ... | bash` pode impedir a leitura do teclado.
+**Solucao:** Baixe o script primeiro: `curl -sO ... && ./brx_run.sh`.
 
 ---
 
-## 4. Visualização (Dashboard)
-
-Para rodar o Dashboard visual (requer Node.js):
-
-```bash
-cd dashboard
-npm install
-npm run dev
-```
-
----
-
-## 🔍 Estrutura do Modelo (Mapa)
+## Mapa da Arquitetura
 
 ![Arquitetura do BRX](architecture.png)
-
-O BRX detecta automaticamente seu hardware (CPU, Memória, GPU) e adapta o número de mentes ativas para otimizar a performance no seu dispositivo.
