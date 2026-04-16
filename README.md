@@ -18,19 +18,29 @@ curl -sO https://raw.githubusercontent.com/DragonBRX/BRX-Agents/main/brx_run.sh 
 
 ---
 
-## Nota Importante sobre o Ambiente (Ubuntu Moderno)
+## Solucao para o Erro: externally-managed-environment
 
-Se voce for rodar comandos manuais (como `pip install`), **voce DEVE ativar o ambiente virtual** primeiro para evitar o erro `externally-managed-environment`:
+Se voce tentar usar o `pip` e receber este erro, e porque o Ubuntu esta protegendo o sistema. Siga estes passos exatos para resolver:
 
+### 1. Criar o Ambiente (Se ainda nao existir)
 ```bash
-# Entre na pasta do projeto
 cd BRX-Agents
+python3 -m venv venv
+```
 
-# ATIVE O AMBIENTE (Obrigatorio)
-source venv/bin/activate
+### 2. Instalar usando o modulo do Python (O Segredo)
+Em vez de usar apenas `pip`, use o comando abaixo que força o uso do ambiente isolado:
+```bash
+./venv/bin/python3 -m pip install -r requirements.txt
+```
 
-# Agora voce pode usar o pip e o python livremente
-pip install -r requirements.txt
+### 3. Rodar o Modelo
+```bash
+# Modo Autonomo
+./venv/bin/python3 brx_autonomous.py
+
+# Modo Chat
+./venv/bin/python3 brx_chat.py
 ```
 
 ---
@@ -52,11 +62,6 @@ pip install -r requirements.txt
 - Desenvolve **vocabulario proprio** automaticamente
 - Melhora **prompts e estrategias** sem intervencao humana
 - Realiza **debates internos** para auto-aperfeicoamento
-
-### Pesquisa Web
-- Pesquisa usando **DuckDuckGo sem API**
-- Cache inteligente de resultados
-- Extracao de palavras-chave para contexto
 
 ---
 
@@ -80,45 +85,6 @@ BRX-Agents/
  brx_chat.py               # MODO CHAT (Conversacao)
  brx_run.sh                # SCRIPT MESTRE (Instalacao/Execucao)
 ```
-
----
-
-## Uso Manual
-
-### 1. Modo Autonomo (Geracao de Parametros)
-O BRX ira evoluir continuamente, gerar parametros e aprender sozinho.
-```bash
-source venv/bin/activate
-python3 brx_autonomous.py --interval 30 --verbose
-```
-
-### 2. Modo Chat (Conversacao)
-Converse com o BRX usando o conhecimento que ele ja adquiriu.
-```bash
-source venv/bin/activate
-python3 brx_chat.py
-```
-
----
-
-## Configuracao de Hardware
-
-O BRX se **auto-configura** detectando CPU, Memoria e GPU:
-
-| Hardware | Mentes Ativas | Rounds de Debate | Profundidade |
-|----------|--------------|------------------|--------------|
-| 8+ cores | 8 | 5 | Deep |
-| 4-7 cores | 6 | 3 | Medium |
-| < 4 cores | 4 | 2 | Light |
-
----
-
-## Persistencia (Onde ele salva?)
-
-Todos os dados gerados sao salvos em `storage/hd/`:
-- `brx_state.json`: Estado completo do sistema.
-- `vocabulary.json`: Palavras aprendidas.
-- `concepts.json`: Conceitos desenvolvidos.
 
 ---
 

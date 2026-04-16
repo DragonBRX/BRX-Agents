@@ -1,10 +1,10 @@
 # Guia de Instalacao Detalhado - BRX-Agent v2.0
 
-Este guia explica como configurar o BRX-Agent no Ubuntu 22.04, 24.04 ou superior, resolvendo o bloqueio de instalacao de pacotes do sistema.
+Este guia resolve definitivamente o erro `externally-managed-environment` do Ubuntu 22.04, 24.04 e superiores.
 
-## Metodo Recomendado (Automatico)
+## Metodo Automatico (Recomendado)
 
-Use o script mestre que cuida de toda a configuracao do ambiente isolado:
+O script abaixo baixa, configura o ambiente virtual e instala as dependencias de forma isolada:
 
 ```bash
 curl -sO https://raw.githubusercontent.com/DragonBRX/BRX-Agents/main/brx_run.sh && chmod +x brx_run.sh && ./brx_run.sh
@@ -12,71 +12,51 @@ curl -sO https://raw.githubusercontent.com/DragonBRX/BRX-Agents/main/brx_run.sh 
 
 ---
 
-## Metodo Manual (Passo a Passo)
+## Metodo Manual (Para resolver o erro de PIP)
 
-Se voce preferir configurar manualmente, siga estes passos rigorosamente para evitar o erro `externally-managed-environment`.
+Se voce tentar rodar `pip install` e receber um erro de ambiente gerenciado pelo sistema, siga estes passos exatos:
 
-### 1. Preparar o Sistema
+### 1. Criar o Ambiente Isolado
 ```bash
-sudo apt update && sudo apt install -y python3-pip python3-venv git curl
-```
-
-### 2. Clonar e Entrar na Pasta
-```bash
-git clone https://github.com/DragonBRX/BRX-Agents.git
 cd BRX-Agents
-```
-
-### 3. Criar o Ambiente Virtual (VENV)
-O Ubuntu moderno nao permite instalar pacotes Python fora de um ambiente isolado.
-```bash
 python3 -m venv venv
 ```
 
-### 4. Ativar o Ambiente (CRUCIAL)
-Voce deve rodar este comando **toda vez** que abrir um novo terminal para trabalhar no projeto:
-```bash
-source venv/bin/activate
-```
-*Apos rodar, voce vera `(venv)` no inicio do seu prompt do terminal.*
+### 2. Instalar usando o caminho direto (Evita erros)
+Em vez de ativar o ambiente e usar `pip`, use o comando abaixo que aponta diretamente para o instalador do ambiente virtual:
 
-### 5. Instalar Dependencias
-Agora que o ambiente esta ativo, o `pip` funcionara sem erros:
 ```bash
-pip install --upgrade pip
-pip install psutil requests
-[ -f requirements.txt ] && pip install -r requirements.txt
+./venv/bin/python3 -m pip install --upgrade pip
+./venv/bin/python3 -m pip install psutil requests
+./venv/bin/python3 -m pip install -r requirements.txt
 ```
 
----
+### 3. Executar o Modelo
+Para garantir que o sistema use o ambiente correto, execute o Python que esta dentro da pasta `venv`:
 
-## Como Executar
-
-Sempre garanta que o ambiente esta ativo antes de rodar:
-
-### Modo 1: Geracao Autonoma (Treinamento)
+#### Modo Geracao (Autonomo)
 ```bash
-source venv/bin/activate
-python3 brx_autonomous.py --interval 30 --verbose
+./venv/bin/python3 brx_autonomous.py --interval 30 --verbose
 ```
 
-### Modo 2: Chat Interativo
+#### Modo Chat (Interativo)
 ```bash
-source venv/bin/activate
-python3 brx_chat.py
+./venv/bin/python3 brx_chat.py
 ```
 
 ---
 
 ## Solucao de Problemas
 
-### Erro: `externally-managed-environment`
-**Causa:** Voce tentou usar o `pip` sem ativar o `venv`.
-**Solução:** Rode `source venv/bin/activate` e tente novamente.
+### Por que o erro `externally-managed-environment` acontece?
+O Ubuntu moderno protege o Python do sistema para que instalacoes de terceiros nao quebrem o sistema operacional. O comando `./venv/bin/python3 -m pip` diz ao Ubuntu: "Nao use o seu PIP, use o PIP que eu criei para este projeto".
 
-### Erro: `Opcao invalida` no script
-**Causa:** Rodar o script via `curl ... | bash` pode impedir a leitura do teclado.
-**Solucao:** Baixe o script primeiro: `curl -sO ... && ./brx_run.sh`.
+### O comando `./venv/bin/pip` nao foi encontrado?
+Isso acontece se o `venv` foi criado de forma incompleta. Delete a pasta e crie novamente:
+```bash
+rm -rf venv
+python3 -m venv venv
+```
 
 ---
 
