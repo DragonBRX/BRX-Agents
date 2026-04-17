@@ -1,0 +1,501 @@
+{
+  "metadata": {
+    "version": "7.0.0",
+    "name": "BRX Knowledge Base",
+    "description": "Base de conhecimento multimodal para o sistema BRX-Agents",
+    "created": "2025-01-01T00:00:00Z",
+    "last_updated": "2025-04-17T00:00:00Z",
+    "total_entries": 0,
+    "categories": [
+      "programming",
+      "architecture",
+      "security",
+      "machine_learning",
+      "data_science",
+      "economics",
+      "psychology",
+      "philosophy",
+      "product_management",
+      "devops",
+      "blockchain",
+      "cloud_computing"
+    ]
+  },
+  "domains": {
+    "programming": {
+      "languages": [
+        {
+          "name": "Python",
+          "paradigms": ["orientado_objetos", "funcional", "procedural"],
+          "version": "3.12",
+          "use_cases": ["automation", "data_science", "web_development", "ai_ml"],
+          "complexity": "media",
+          "learning_curve": "suave",
+          "ecosystem_score": 0.95
+        },
+        {
+          "name": "JavaScript",
+          "paradigms": ["orientado_objetos", "funcional", "event_driven"],
+          "version": "ES2024",
+          "use_cases": ["web_frontend", "web_backend", "mobile", "desktop"],
+          "complexity": "media",
+          "learning_curve": "moderada",
+          "ecosystem_score": 0.98
+        },
+        {
+          "name": "Rust",
+          "paradigms": ["multi_paradigma", "systems", "funcional"],
+          "version": "1.75",
+          "use_cases": ["systems_programming", "webassembly", "embedded", "high_performance"],
+          "complexity": "alta",
+          "learning_curve": "íngreme",
+          "ecosystem_score": 0.85
+        },
+        {
+          "name": "Go",
+          "paradigms": ["procedural", "concorrente"],
+          "version": "1.21",
+          "use_cases": ["cloud_native", "microservices", "devops", "distributed_systems"],
+          "complexity": "baixa",
+          "learning_curve": "suave",
+          "ecosystem_score": 0.88
+        }
+      ],
+      "patterns": [
+        {
+          "name": "Singleton",
+          "category": "criacional",
+          "difficulty": "facil",
+          "use_cases": ["database_connections", "loggers", "caches"],
+          "description": "Garante uma única instância de uma classe"
+        },
+        {
+          "name": "Observer",
+          "category": "comportamental",
+          "difficulty": "media",
+          "use_cases": ["event_handling", "real_time_updates", "pub_sub"],
+          "description": "Define dependência um-para-muitos entre objetos"
+        },
+        {
+          "name": "Strategy",
+          "category": "comportamental",
+          "difficulty": "media",
+          "use_cases": ["algorithms", "payment_methods", "sorting"],
+          "description": "Encapsula algoritmos e os torna intercambiáveis"
+        },
+        {
+          "name": "Microservices",
+          "category": "arquitetural",
+          "difficulty": "alta",
+          "use_cases": ["scalable_systems", "distributed_apps", "cloud_native"],
+          "description": "Arquitetura de serviços pequenos e independentes"
+        }
+      ]
+    },
+    "architecture": {
+      "patterns": [
+        {
+          "name": "Clean Architecture",
+          "layers": ["entities", "use_cases", "interface_adapters", "frameworks"],
+          "principles": ["dependency_inversion", "separation_of_concerns", "testability"],
+          "complexity": "alta",
+          "benefits": ["maintainability", "testability", "flexibility"]
+        },
+        {
+          "name": "Event-Driven Architecture",
+          "components": ["event_producers", "event_consumers", "event_bus", "event_store"],
+          "patterns": ["cqrs", "event_sourcing", "saga"],
+          "complexity": "alta",
+          "benefits": ["scalability", "loose_coupling", "real_time"]
+        },
+        {
+          "name": "Serverless",
+          "providers": ["aws_lambda", "azure_functions", "gcp_cloud_functions"],
+          "use_cases": ["event_processing", "apis", "scheduled_tasks"],
+          "complexity": "media",
+          "benefits": ["cost_efficiency", "auto_scaling", "no_server_management"]
+        }
+      ],
+      "principles": [
+        {
+          "name": "SOLID",
+          "acronym": "Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion",
+          "importance": "fundamental",
+          "application": "object_oriented_design"
+        },
+        {
+          "name": "DRY",
+          "description": "Don't Repeat Yourself",
+          "importance": "alta",
+          "application": "all_codebases"
+        },
+        {
+          "name": "KISS",
+          "description": "Keep It Simple, Stupid",
+          "importance": "alta",
+          "application": "all_systems"
+        }
+      ]
+    },
+    "security": {
+      "owasp_top_10": [
+        {
+          "rank": 1,
+          "name": "Broken Access Control",
+          "risk": "critico",
+          "mitigation": ["deny_by_default", "least_privilege", "access_control_matrix"]
+        },
+        {
+          "rank": 2,
+          "name": "Cryptographic Failures",
+          "risk": "alto",
+          "mitigation": ["encryption_at_rest", "encryption_in_transit", "strong_algorithms"]
+        },
+        {
+          "rank": 3,
+          "name": "Injection",
+          "risk": "critico",
+          "mitigation": ["parameterized_queries", "input_validation", "waf"]
+        }
+      ],
+      "best_practices": [
+        {
+          "category": "authentication",
+          "practices": ["mfa", "oauth2", "jwt", "session_management"],
+          "priority": "alta"
+        },
+        {
+          "category": "authorization",
+          "practices": ["rbac", "abac", "policy_based_access"],
+          "priority": "alta"
+        },
+        {
+          "category": "data_protection",
+          "practices": ["encryption", "tokenization", "masking", "gdpr_compliance"],
+          "priority": "critica"
+        }
+      ]
+    },
+    "machine_learning": {
+      "types": [
+        {
+          "name": "Supervised Learning",
+          "algorithms": ["linear_regression", "random_forest", "svm", "neural_networks"],
+          "use_cases": ["classification", "regression", "prediction"],
+          "data_requirement": "labeled_data"
+        },
+        {
+          "name": "Unsupervised Learning",
+          "algorithms": ["kmeans", "hierarchical_clustering", "pca", "autoencoders"],
+          "use_cases": ["clustering", "dimensionality_reduction", "anomaly_detection"],
+          "data_requirement": "unlabeled_data"
+        },
+        {
+          "name": "Reinforcement Learning",
+          "algorithms": ["q_learning", "policy_gradient", "actor_critic", "ppo"],
+          "use_cases": ["game_playing", "robotics", "autonomous_systems", "optimization"],
+          "data_requirement": "environment_interaction"
+        }
+      ],
+      "frameworks": [
+        {
+          "name": "PyTorch",
+          "developer": "Meta AI",
+          "strengths": ["dynamic_computation", "research_friendly", "pythonic"],
+          "use_cases": ["research", "production", "mobile"]
+        },
+        {
+          "name": "TensorFlow",
+          "developer": "Google",
+          "strengths": ["production_ready", "deployment_tools", "ecosystem"],
+          "use_cases": ["production", "edge", "enterprise"]
+        },
+        {
+          "name": "Hugging Face",
+          "developer": "Hugging Face",
+          "strengths": ["transformers", "pretrained_models", "community"],
+          "use_cases": ["nlp", "cv", "multimodal"]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Accuracy",
+          "type": "classification",
+          "formula": "(TP + TN) / (TP + TN + FP + FN)",
+          "best_for": "balanced_datasets"
+        },
+        {
+          "name": "F1 Score",
+          "type": "classification",
+          "formula": "2 * (Precision * Recall) / (Precision + Recall)",
+          "best_for": "imbalanced_datasets"
+        },
+        {
+          "name": "RMSE",
+          "type": "regression",
+          "formula": "sqrt(mean((y_true - y_pred)^2))",
+          "best_for": "regression_tasks"
+        }
+      ]
+    },
+    "data_science": {
+      "process": [
+        {
+          "phase": "Data Collection",
+          "activities": ["web_scraping", "api_integration", "database_extraction", "surveys"],
+          "tools": ["requests", "selenium", "sql", "pandas"]
+        },
+        {
+          "phase": "Data Cleaning",
+          "activities": ["missing_values", "outliers", "duplicates", "formatting"],
+          "tools": ["pandas", "numpy", "openrefine"]
+        },
+        {
+          "phase": "Exploratory Analysis",
+          "activities": ["statistics", "visualization", "correlation", "hypothesis_testing"],
+          "tools": ["matplotlib", "seaborn", "plotly", "scipy"]
+        },
+        {
+          "phase": "Modeling",
+          "activities": ["feature_engineering", "model_selection", "training", "validation"],
+          "tools": ["scikit_learn", "xgboost", "lightgbm"]
+        },
+        {
+          "phase": "Deployment",
+          "activities": ["api_creation", "monitoring", "retraining", "versioning"],
+          "tools": ["flask", "fastapi", "docker", "mlflow"]
+        }
+      ]
+    },
+    "economics": {
+      "metrics": [
+        {
+          "name": "ROI",
+          "formula": "(Gain - Cost) / Cost",
+          "interpretation": "higher_is_better",
+          "benchmark": "positive"
+        },
+        {
+          "name": "NPV",
+          "formula": "sum(CF_t / (1 + r)^t)",
+          "interpretation": "positive_npv_accept",
+          "benchmark": "zero"
+        },
+        {
+          "name": "Payback Period",
+          "formula": "Initial_Investment / Annual_Cash_Flow",
+          "interpretation": "shorter_is_better",
+          "benchmark": "industry_dependent"
+        }
+      ],
+      "models": [
+        {
+          "name": "Cost-Benefit Analysis",
+          "components": ["identification", "valuation", "comparison"],
+          "use_cases": ["project_evaluation", "policy_analysis"]
+        },
+        {
+          "name": "Game Theory",
+          "components": ["players", "strategies", "payoffs", "equilibrium"],
+          "use_cases": ["pricing", "competition", "negotiation"]
+        }
+      ]
+    },
+    "psychology": {
+      "cognitive_biases": [
+        {
+          "name": "Confirmation Bias",
+          "description": "Tendency to search for information that confirms preconceptions",
+          "mitigation": ["devil_advocacy", "blind_review", "diverse_teams"]
+        },
+        {
+          "name": "Anchoring",
+          "description": "Over-reliance on first piece of information",
+          "mitigation": ["independent_estimation", "reference_class_forecasting"]
+        },
+        {
+          "name": "Dunning-Kruger Effect",
+          "description": "Unskilled individuals overestimate their ability",
+          "mitigation": ["continuous_learning", "peer_review", "metrics"]
+        }
+      ],
+      "ux_principles": [
+        {
+          "name": "Hick's Law",
+          "principle": "Decision time increases with number of choices",
+          "application": "simplify_options"
+        },
+        {
+          "name": "Fitts's Law",
+          "principle": "Time to acquire target depends on distance and size",
+          "application": "optimize_interactions"
+        },
+        {
+          "name": "Jakob's Law",
+          "principle": "Users spend most time on other sites",
+          "application": "follow_conventions"
+        }
+      ]
+    },
+    "philosophy": {
+      "ethical_frameworks": [
+        {
+          "name": "Utilitarianism",
+          "principle": "Maximize overall happiness",
+          "founder": "Jeremy Bentham, John Stuart Mill",
+          "application": "resource_allocation"
+        },
+        {
+          "name": "Deontology",
+          "principle": "Follow moral duties and rules",
+          "founder": "Immanuel Kant",
+          "application": "rights_protection"
+        },
+        {
+          "name": "Virtue Ethics",
+          "principle": "Develop moral character",
+          "founder": "Aristotle",
+          "application": "professional_conduct"
+        }
+      ]
+    },
+    "product_management": {
+      "frameworks": [
+        {
+          "name": "OKR",
+          "components": ["objectives", "key_results", "initiatives"],
+          "cycle": "quarterly",
+          "benefits": ["alignment", "focus", "transparency"]
+        },
+        {
+          "name": "Jobs-to-be-Done",
+          "components": ["job_statement", "outcomes", "constraints"],
+          "benefits": ["customer_focus", "innovation"]
+        },
+        {
+          "name": "Lean Startup",
+          "components": ["build", "measure", "learn"],
+          "benefits": ["speed", "validation", "efficiency"]
+        }
+      ]
+    },
+    "devops": {
+      "practices": [
+        {
+          "name": "CI/CD",
+          "components": ["continuous_integration", "continuous_delivery", "continuous_deployment"],
+          "tools": ["jenkins", "gitlab_ci", "github_actions", "circleci"]
+        },
+        {
+          "name": "Infrastructure as Code",
+          "approaches": ["declarative", "imperative"],
+          "tools": ["terraform", "ansible", "pulumi", "cloudformation"]
+        },
+        {
+          "name": "Monitoring",
+          "types": ["metrics", "logs", "traces", "alerts"],
+          "tools": ["prometheus", "grafana", "elk", "jaeger"]
+        }
+      ]
+    },
+    "blockchain": {
+      "types": [
+        {
+          "name": "Public",
+          "examples": ["Bitcoin", "Ethereum"],
+          "consensus": ["PoW", "PoS"],
+          "use_cases": ["cryptocurrency", "defi", "nfts"]
+        },
+        {
+          "name": "Private",
+          "examples": ["Hyperledger", "R3 Corda"],
+          "consensus": ["PBFT", "Raft"],
+          "use_cases": ["supply_chain", "enterprise", "consortium"]
+        }
+      ],
+      "smart_contracts": {
+        "platforms": ["Ethereum", "Solana", "Avalanche", "Polygon"],
+        "languages": ["Solidity", "Rust", "Vyper"],
+        "security": ["audits", "formal_verification", "bug_bounties"]
+      }
+    },
+    "cloud_computing": {
+      "providers": [
+        {
+          "name": "AWS",
+          "services": 200,
+          "market_share": 0.32,
+          "strengths": ["breadth", "maturity", "enterprise"]
+        },
+        {
+          "name": "Azure",
+          "services": 180,
+          "market_share": 0.23,
+          "strengths": ["microsoft_integration", "hybrid", "enterprise"]
+        },
+        {
+          "name": "GCP",
+          "services": 150,
+          "market_share": 0.10,
+          "strengths": ["data_analytics", "ml", "kubernetes"]
+        }
+      ],
+      "models": [
+        {
+          "name": "IaaS",
+          "description": "Infrastructure as a Service",
+          "examples": ["EC2", "Azure VMs", "Compute Engine"],
+          "control_level": "high"
+        },
+        {
+          "name": "PaaS",
+          "description": "Platform as a Service",
+          "examples": ["Elastic Beanstalk", "App Service", "App Engine"],
+          "control_level": "medium"
+        },
+        {
+          "name": "SaaS",
+          "description": "Software as a Service",
+          "examples": ["Gmail", "Office 365", "Salesforce"],
+          "control_level": "low"
+        }
+      ]
+    }
+  },
+  "reasoning_patterns": {
+    "deductive": {
+      "description": "General to specific",
+      "example": "All men are mortal. Socrates is a man. Therefore, Socrates is mortal.",
+      "confidence": "high_when_premises_true"
+    },
+    "inductive": {
+      "description": "Specific to general",
+      "example": "Every swan I have seen is white. Therefore, all swans are white.",
+      "confidence": "probabilistic"
+    },
+    "abductive": {
+      "description": "Inference to best explanation",
+      "example": "The lawn is wet. The best explanation is that it rained.",
+      "confidence": "context_dependent"
+    },
+    "analogical": {
+      "description": "Based on similarities",
+      "example": "The heart is like a pump. Pumps have valves. Therefore, the heart has valves.",
+      "confidence": "depends_on_similarity"
+    }
+  },
+  "response_templates": {
+    "technical_analysis": {
+      "structure": ["overview", "detailed_analysis", "recommendations", "conclusion"],
+      "depth_levels": ["summary", "standard", "detailed", "exhaustive"]
+    },
+    "code_review": {
+      "structure": ["architecture", "code_quality", "security", "performance", "testing"],
+      "severity_levels": ["info", "warning", "critical", "blocker"]
+    },
+    "strategic_planning": {
+      "structure": ["current_state", "goals", "gap_analysis", "roadmap", "risks"],
+      "time_horizons": ["short_term", "medium_term", "long_term"]
+    }
+  }
+}
