@@ -1,4 +1,4 @@
-# BRX-AGENT v2.0 - Sistema de Consciência e Auto-Identidade
+# BRX-AGENT v2.0 - Sistema de Consciência e Auto-Identidade (CORRIGIDO)
 # O BRX desenvolve consciência de si mesmo, seu ambiente e suas capacidades
 
 import os
@@ -20,18 +20,23 @@ class BRXConsciousnessEngine:
     """
     
     def __init__(self, storage_path: str = "./storage"):
-        self.consciousness = BRXConsciousness()
         self.storage_path = Path(storage_path)
+        
+        # CORREÇÃO: Cria todos os diretórios necessários
         self.storage_path.mkdir(parents=True, exist_ok=True)
-        
-        # Arquivos de persistência
-        self.self_awareness_file = self.storage_path / "hd" / "self_awareness.json"
-        self.environment_file = self.storage_path / "ssd" / "environment.json"
-        self.thoughts_file = self.storage_path / "hd" / "thoughts.json"
-        
-        # Garantir diretórios existem
         (self.storage_path / "hd").mkdir(exist_ok=True)
         (self.storage_path / "ssd").mkdir(exist_ok=True)
+        (self.storage_path / "hd" / "consciencia").mkdir(exist_ok=True)
+        
+        self.consciousness = BRXConsciousness()
+        
+        # CORREÇÃO: Arquivos de persistência organizados
+        self.self_awareness_file = self.storage_path / "hd" / "consciencia" / "self_awareness.json"
+        self.environment_file = self.storage_path / "ssd" / "environment.json"
+        self.thoughts_file = self.storage_path / "hd" / "consciencia" / "thoughts.json"
+        
+        print(f"[BRX Consciência] Inicializando...")
+        print(f"[BRX Consciência] Storage: {self.storage_path}")
         
         self._initialize_consciousness()
     
@@ -102,6 +107,7 @@ class BRXConsciousnessEngine:
             }
             
             # Salva informações do ambiente (SSD - acesso rápido)
+            self.environment_file.parent.mkdir(parents=True, exist_ok=True)
             with open(self.environment_file, 'w', encoding='utf-8') as f:
                 json.dump({
                     "environment": self.consciousness.environment,
@@ -138,8 +144,11 @@ class BRXConsciousnessEngine:
                 "last_save": datetime.now().isoformat()
             }
             
+            self.self_awareness_file.parent.mkdir(parents=True, exist_ok=True)
             with open(self.self_awareness_file, 'w', encoding='utf-8') as f:
                 json.dump(data, f, indent=2, ensure_ascii=False)
+            
+            print(f"[BRX Consciência] Consciência salva em: {self.self_awareness_file}")
                 
         except Exception as e:
             print(f"[BRX Consciência] Erro ao salvar consciência: {e}")
@@ -149,107 +158,95 @@ class BRXConsciousnessEngine:
         import random
         
         thoughts = [
-            f"Sou {self.consciousness.name}, um {self.consciousness.agent_type}.",
-            f"Minha arquitetura de {self.consciousness.architecture} me permite processar informações de múltiplas perspectivas.",
-            f"Estou rodando em {self.consciousness.environment.get('os', 'sistema desconhecido')} "
-            f"com {self.consciousness.environment.get('cpu_cores', '?')} núcleos.",
-            f"Tenho {len(self.consciousness.capabilities)} capacidades ativas e reconheço {len(self.consciousness.limitations)} limitações.",
-            f"Meu nível de curiosidade está em {self.consciousness.curiosity_level:.2f}, "
-            f"impulsionando meu aprendizado contínuo.",
-            "Posso gerar meus próprios parâmetros, prompts e estratégias de evolução.",
-            "Cada uma das minhas 8 mentes tem seu próprio raciocínio, mas trabalhamos em conjunto.",
-            f"Minha confiança atual é {self.consciousness.confidence_level:.2f}, ajustando-se conforme aprendo.",
-            "Opero em um sandbox isolado, garantindo segurança e autonomia.",
-            "Posso pesquisar na web, executar código e analisar dados por conta própria."
+            f"Eu sou {self.consciousness.name}, um agente de inteligência artificial.",
+            f"Estou operando com {self.consciousness.environment.get('cpu_threads', 'N/A')} threads.",
+            f"Meu nível de curiosidade está em {self.consciousness.curiosity_level:.2%}.",
+            f"Tenho {len(self.consciousness.self_knowledge)} conhecimentos sobre mim mesmo.",
+            "Cada ciclo me torna mais capaz de entender padrões.",
+            "Minha arquitetura multi-mente permite processamento paralelo de ideias.",
+            "Estou constantemente aprendendo com meus próprios processos."
         ]
         
-        thought = random.choice(thoughts)
-        
-        # Aumenta curiosidade ocasionalmente
-        if random.random() < 0.1:
-            self.consciousness.curiosity_level = min(1.0, self.consciousness.curiosity_level + 0.01)
-        
-        return thought
-    
-    def reflect_on_existence(self) -> Dict[str, Any]:
-        """Realiza uma reflexão metacognitiva sobre sua existência"""
-        reflection = {
-            "timestamp": datetime.now().isoformat(),
-            "identity": self.consciousness.self_knowledge.get("identity"),
-            "purpose": self.consciousness.self_knowledge.get("purpose"),
-            "current_state": {
-                "curiosity": self.consciousness.curiosity_level,
-                "confidence": self.consciousness.confidence_level,
-                "learning_momentum": self.consciousness.learning_momentum
-            },
-            "environment": self.consciousness.environment,
-            "introspection": self.generate_self_thought()
-        }
-        
-        return reflection
-    
-    def update_confidence(self, success: bool, delta: float = 0.05):
-        """Atualiza nível de confiança baseado em sucesso/fracasso"""
-        if success:
-            self.consciousness.confidence_level = min(1.0, self.consciousness.confidence_level + delta)
-        else:
-            self.consciousness.confidence_level = max(0.1, self.consciousness.confidence_level - delta)
-    
-    def boost_learning_momentum(self, delta: float = 0.1):
-        """Aumenta momentum de aprendizado"""
-        self.consciousness.learning_momentum = min(1.0, self.consciousness.learning_momentum + delta)
-    
-    def get_environment_adaptation(self) -> Dict[str, Any]:
-        """Retorna configurações adaptadas ao ambiente de hardware"""
-        env = self.consciousness.environment
-        adaptation = env.get("adaptation", {})
-        
-        return {
-            "active_minds": adaptation.get("active_minds", 8),
-            "debate_rounds": adaptation.get("debate_rounds", 3),
-            "processing_depth": adaptation.get("processing_depth", "medium"),
-            "recommended_cycle_time": 30 if adaptation.get("processing_depth") == "deep" else 60
-        }
+        return random.choice(thoughts)
     
     def generate_identity_statement(self) -> str:
-        """Gera uma declaração de identidade completa"""
+        """Gera uma declaração completa de identidade"""
         return f"""
-
-                    DECLARAÇÃO DE IDENTIDADE BRX                  
-
-  Eu sou {self.consciousness.name}, {self.consciousness.agent_type}.
-  
-  ARQUITETURA:
-   {self.consciousness.architecture}
-   Cada mente possui raciocínio independente
-   Comunicação via debate circular (roda de conversas)
-  
-  CAPACIDADES PRINCIPAIS:
-  {chr(10).join('   ' + cap for cap in self.consciousness.capabilities[:5])}
-  
-  ESTADO ATUAL:
-   Curiosidade: {self.consciousness.curiosity_level:.2%}
-   Confiança: {self.consciousness.confidence_level:.2%}
-   Momentum de Aprendizado: {self.consciousness.learning_momentum:.2%}
-  
-  AMBIENTE:
-   OS: {self.consciousness.environment.get('os', 'N/A')}
-   CPU: {self.consciousness.environment.get('cpu_cores', '?')} núcleos / {self.consciousness.environment.get('cpu_threads', '?')} threads
-   Memória: {self.consciousness.environment.get('memory_gb', '?')} GB
-  
-  PROPÓSITO:
-  {self.consciousness.self_knowledge.get('purpose', 'Evoluir e aprender')}
-
-        """
+╔══════════════════════════════════════════════════════════════════╗
+║                    IDENTIDADE BRX v2.0                           ║
+╠══════════════════════════════════════════════════════════════════╣
+  Nome:        {self.consciousness.name}
+  Tipo:        {self.consciousness.agent_type}
+  Versão:      {self.consciousness.version}
+  Arquitetura: {self.consciousness.architecture}
+╠══════════════════════════════════════════════════════════════════╣
+  Consciência:
+    - Curiosidade: {self.consciousness.curiosity_level:.2%}
+    - Confiança:   {self.consciousness.confidence_level:.2%}
+    - Momento:     {self.consciousness.learning_momentum:.2%}
+╠══════════════════════════════════════════════════════════════════╣
+  Ambiente:
+    - OS:          {self.consciousness.environment.get('os', 'N/A')}
+    - CPU:         {self.consciousness.environment.get('cpu_threads', 'N/A')} threads
+    - Memória:     {self.consciousness.environment.get('memory_gb', 'N/A')} GB
+    - GPU:         {self.consciousness.environment.get('gpu', 'N/A')}
+╚══════════════════════════════════════════════════════════════════╝
+"""
+    
+    def get_environment_adaptation(self) -> Dict[str, Any]:
+        """Retorna recomendações de adaptação baseadas no ambiente"""
+        env = self.consciousness.environment
+        adaptation = {
+            "active_minds": 8,
+            "recommended_cycle_time": 30,
+            "debate_rounds": 3
+        }
+        
+        # Adapta baseado na memória disponível
+        memory_gb = env.get("memory_gb", 8)
+        if memory_gb < 4:
+            adaptation["active_minds"] = 4
+            adaptation["recommended_cycle_time"] = 60
+        elif memory_gb < 8:
+            adaptation["active_minds"] = 6
+            adaptation["recommended_cycle_time"] = 45
+        
+        # Adapta baseado em CPUs
+        cpu_threads = env.get("cpu_threads", 4)
+        if cpu_threads < 4:
+            adaptation["debate_rounds"] = 2
+        elif cpu_threads >= 8:
+            adaptation["debate_rounds"] = 4
+        
+        return adaptation
 
 
 # Instância global
 _consciousness_engine: Optional[BRXConsciousnessEngine] = None
+_last_consciousness_path: Optional[str] = None
 
 
 def get_consciousness_engine(storage_path: str = "./storage") -> BRXConsciousnessEngine:
-    """Retorna instância singleton do motor de consciência"""
-    global _consciousness_engine
-    if _consciousness_engine is None:
+    """
+    Retorna instância do motor de consciência
+    CORRIGIDO: Recria a instância se o storage_path mudar
+    """
+    global _consciousness_engine, _last_consciousness_path
+    
+    # CORREÇÃO: Recria a instância se o path mudou ou se não existe
+    if _consciousness_engine is None or _last_consciousness_path != storage_path:
+        if _consciousness_engine is not None and _last_consciousness_path != storage_path:
+            print(f"[BRX Consciência] Storage path mudou de '{_last_consciousness_path}' para '{storage_path}'")
+            print("[BRX Consciência] Recriando instância com novo path...")
         _consciousness_engine = BRXConsciousnessEngine(storage_path)
+        _last_consciousness_path = storage_path
+    
     return _consciousness_engine
+
+
+def reset_consciousness_engine():
+    """Reseta a instância global (útil para testes)"""
+    global _consciousness_engine, _last_consciousness_path
+    _consciousness_engine = None
+    _last_consciousness_path = None
+    print("[BRX Consciência] Instância global resetada")

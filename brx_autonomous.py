@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-BRX-AGENT v2.0 - Modo Autônomo Contínuo
-=======================================
+BRX-AGENT v2.0 - Modo Autônomo Contínuo (CORRIGIDO)
+===================================================
 Este é o arquivo principal de execução autônoma do BRX.
 Coloque para rodar e deixe o agente aprender e evoluir sozinho.
 
@@ -20,6 +20,11 @@ Argumentos:
     --storage   Diretório para armazenamento (padrão: ./storage)
     --interval  Intervalo entre ciclos em segundos (padrão: 30)
     --verbose   Modo verboso com mais saída
+
+CORREÇÕES:
+    - Agora respeita o caminho de storage externo (ex: /media/dragonscp/Novo volume/modelo BRX)
+    - Cria corretamente a estrutura de pastas: hd/, ssd/, parametros/, consciencia/
+    - Recria instâncias quando o path muda
 """
 
 import os
@@ -34,7 +39,7 @@ from pathlib import Path
 # Adiciona diretório atual ao path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from core.brx_engine import BRXCore, get_brx_core
+from core.brx_engine import BRXCore, get_brx_core, reset_brx_core
 
 
 class BRXAutonomousRunner:
@@ -66,8 +71,7 @@ class BRXAutonomousRunner:
     
     def _print_banner(self):
         """Imprime banner de inicialização"""
-        print("""
-
+        print(f"""
                                                                               
                               
                       
@@ -89,6 +93,8 @@ class BRXAutonomousRunner:
      Aprender e evoluir continuamente                                        
 
   Pressione Ctrl+C para encerrar graciosamente                                
+
+  Storage: {self.storage_path}
 
         """)
     
@@ -184,9 +190,10 @@ class BRXAutonomousRunner:
  STATUS DO BRX                                               
 
  Uptime: {hours:02d}h {minutes:02d}m {seconds:02d}s                                      
- Ciclos: {self.cycles_completed:<5} | Parâmetros: {status['parameters']['total']:<6}        
- Vocabulário: {status['vocabulary']['size']:<5} | Mentes ativas: {status['minds']['active']}/8   
- Curiosidade: {status['consciousness']['curiosity']:.1%} | Confiança: {status['consciousness']['confidence']:.1%}        
+ Ciclos: {self.cycles_completed:<5} | Parâmetros: {status['parameters']['total']:<6}       
+ Vocabulário: {status['vocabulary']['size']:<5} | Mentes ativas: {status['minds']['active']}/8  
+ Curiosidade: {status['consciousness']['curiosity']:.1%} | Confiança: {status['consciousness']['confidence']:.1%}       
+ Storage: {status.get('storage_path', 'N/A')}
 
         """)
     
@@ -194,8 +201,16 @@ class BRXAutonomousRunner:
         """Loop principal de execução autônoma"""
         self._print_banner()
         
+        # CORREÇÃO: Reseta o singleton para garantir que use o novo storage_path
+        reset_brx_core()
+        
         # Inicializa BRX
         print("[BRX Autonomous] Inicializando núcleo...")
+        print(f"[BRX Autonomous] Storage path: {self.storage_path}")
+        
+        # CORREÇÃO: Garante que o diretório existe
+        self.storage_path.mkdir(parents=True, exist_ok=True)
+        
         self.brx = get_brx_core(str(self.storage_path))
         self.brx.load_state()
         
@@ -266,6 +281,12 @@ class BRXAutonomousRunner:
         # Estatísticas finais
         uptime = time.time() - self.start_time if self.start_time else 0
         
+        # Verifica arquivos criados
+        params_dir = self.storage_path / "hd" / "parametros"
+        files_created = []
+        if params_dir.exists():
+            files_created = list(params_dir.glob("*.json"))
+        
         print(f"""
 
                          BRX AUTÔNOMO ENCERRADO                               
@@ -273,7 +294,17 @@ class BRXAutonomousRunner:
   Uptime total: {int(uptime)} segundos                                          
   Ciclos completados: {self.cycles_completed}                                   
   Parâmetros gerados: {self.total_params_generated}                             
-  Estado salvo em: {self.storage_path / 'hd'}                                   
+  Storage path: {self.storage_path}                                             
+  Arquivos de parâmetros: {len(files_created)}                                  
+
+  Estrutura criada:
+    {self.storage_path}/
+    ├── ssd/
+    ├── hd/
+    │   ├── parametros/     <- Parâmetros gerados
+    │   ├── consciencia/    <- Estado de consciência
+    │   └── ...
+    └── logs/
 
         """)
 
@@ -285,8 +316,16 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Exemplos:
+    # Modo padrão (storage local)
     python brx_autonomous.py
-    python brx_autonomous.py --storage /path/to/storage --interval 60
+    
+    # Com storage externo (HD)
+    python brx_autonomous.py --storage "/media/dragonscp/Novo volume/modelo BRX"
+    
+    # Com intervalo personalizado
+    python brx_autonomous.py --storage "/media/dragonscp/Novo volume/modelo BRX" --interval 60
+    
+    # Modo verboso
     python brx_autonomous.py --verbose
         """
     )
@@ -313,9 +352,20 @@ Exemplos:
     
     args = parser.parse_args()
     
+    # CORREÇÃO: Expande o path do usuário (~) e resolve path absoluto
+    storage_path = os.path.expanduser(args.storage)
+    storage_path = os.path.abspath(storage_path)
+    
+    # Verifica se o diretório pai existe (para paths externos)
+    parent_dir = os.path.dirname(storage_path)
+    if parent_dir and not os.path.exists(parent_dir):
+        print(f"[ERRO] Diretório pai não existe: {parent_dir}")
+        print(f"[ERRO] Certifique-se de que o volume está montado corretamente.")
+        sys.exit(1)
+    
     # Cria e executa runner
     runner = BRXAutonomousRunner(
-        storage_path=args.storage,
+        storage_path=storage_path,
         interval=args.interval,
         verbose=args.verbose
     )

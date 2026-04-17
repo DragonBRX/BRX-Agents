@@ -1,4 +1,4 @@
-# BRX-AGENT v2.0 - Núcleo Principal
+# BRX-AGENT v2.0 - Núcleo Principal (CORRIGIDO)
 # Integra consciência, 8 mentes, geração de parâmetros e pesquisa
 
 import os
@@ -61,8 +61,12 @@ class BRXCore:
         (self.storage_path / "hd").mkdir(exist_ok=True)
         (self.storage_path / "logs").mkdir(exist_ok=True)
         
-        print("""
-
+        # NOVO: Cria estrutura de parâmetros
+        (self.storage_path / "hd" / "parametros").mkdir(exist_ok=True)
+        (self.storage_path / "hd" / "memoria").mkdir(exist_ok=True)
+        (self.storage_path / "hd" / "consciencia").mkdir(exist_ok=True)
+        
+        print(f"""
                                                                               
                     
             
@@ -78,6 +82,7 @@ class BRXCore:
         
         # Inicializa componentes
         print("[BRX Core] Inicializando componentes...")
+        print(f"[BRX Core] Storage path: {self.storage_path}")
         
         # 1. Consciência
         self.consciousness = get_consciousness_engine(str(self.storage_path))
@@ -120,6 +125,7 @@ class BRXCore:
         
         print(f"[BRX Core] Sistema pronto para operação autônoma")
         print(f"[BRX Core] Modo: {'Auto-evolutivo' if self.config['auto_evolve'] else 'Manual'}")
+        print(f"[BRX Core] Diretório de dados: {self.storage_path}")
     
     def _register_internal_handlers(self):
         """Registra handlers internos para observar o sistema"""
@@ -396,7 +402,8 @@ Próximas ações sugeridas:
                 "size": self.param_generator.get_vocabulary_size(),
                 "stats": self.param_generator.get_stats()
             },
-            "config": self.config
+            "config": self.config,
+            "storage_path": str(self.storage_path)
         }
     
     def _count_params_by_type(self) -> Dict[str, int]:
@@ -450,11 +457,30 @@ Próximas ações sugeridas:
 
 # Instância global
 _brx_core: Optional[BRXCore] = None
+_last_storage_path: Optional[str] = None
 
 
 def get_brx_core(storage_path: str = "./storage") -> BRXCore:
-    """Retorna instância singleton do núcleo BRX"""
-    global _brx_core
-    if _brx_core is None:
+    """
+    Retorna instância do núcleo BRX
+    CORRIGIDO: Recria a instância se o storage_path mudar
+    """
+    global _brx_core, _last_storage_path
+    
+    # CORREÇÃO: Recria a instância se o path mudou ou se não existe
+    if _brx_core is None or _last_storage_path != storage_path:
+        if _brx_core is not None and _last_storage_path != storage_path:
+            print(f"[BRX Core] Storage path mudou de '{_last_storage_path}' para '{storage_path}'")
+            print("[BRX Core] Recriando instância com novo path...")
         _brx_core = BRXCore(storage_path)
+        _last_storage_path = storage_path
+    
     return _brx_core
+
+
+def reset_brx_core():
+    """Reseta a instância global (útil para testes)"""
+    global _brx_core, _last_storage_path
+    _brx_core = None
+    _last_storage_path = None
+    print("[BRX Core] Instância global resetada")

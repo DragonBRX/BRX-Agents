@@ -1,4 +1,4 @@
-# BRX-AGENT v2.0 - Gerador Automático de Parâmetros
+# BRX-AGENT v2.0 - Gerador Automático de Parâmetros (CORRIGIDO)
 # Gera parâmetros básicos: letras, palavras, frases, números, conceitos
 # O BRX desenvolve seu próprio vocabulário e sistema de parâmetros
 
@@ -23,7 +23,11 @@ class BRXParameterGenerator:
     
     def __init__(self, storage_path: str = "./storage"):
         self.storage_path = Path(storage_path)
+        
+        # CORREÇÃO: Cria todos os diretórios necessários
         self.storage_path.mkdir(parents=True, exist_ok=True)
+        (self.storage_path / "hd").mkdir(exist_ok=True)
+        (self.storage_path / "hd" / "parametros").mkdir(exist_ok=True)
         
         # Bases de conhecimento auto-geradas
         self.vocabulary: Set[str] = set()
@@ -35,14 +39,21 @@ class BRXParameterGenerator:
         # Estatísticas
         self.generation_stats = defaultdict(int)
         
-        # Arquivos de persistência
-        self.vocab_file = self.storage_path / "hd" / "vocabulary.json"
-        self.phrases_file = self.storage_path / "hd" / "phrases.json"
-        self.concepts_file = self.storage_path / "hd" / "concepts.json"
-        self.patterns_file = self.storage_path / "hd" / "patterns.json"
+        # CORREÇÃO: Arquivos de persistência na pasta parametros
+        params_dir = self.storage_path / "hd" / "parametros"
+        self.vocab_file = params_dir / "vocabulary.json"
+        self.phrases_file = params_dir / "phrases.json"
+        self.concepts_file = params_dir / "concepts.json"
+        self.patterns_file = params_dir / "patterns.json"
+        self.stats_file = params_dir / "generation_stats.json"
+        
+        print(f"[BRX Parameters] Inicializando gerador de parâmetros...")
+        print(f"[BRX Parameters] Diretório de parâmetros: {params_dir}")
         
         self._load_knowledge_bases()
         self._initialize_basic_vocabulary()
+        
+        print(f"[BRX Parameters] Vocabulário carregado: {len(self.vocabulary)} palavras")
     
     def _initialize_basic_vocabulary(self):
         """Inicializa vocabulário básico se estiver vazio"""
@@ -72,25 +83,38 @@ class BRXParameterGenerator:
             self.vocabulary.update(basic_words)
             
             self._save_vocabulary()
+            print(f"[BRX Parameters] Vocabulário básico inicializado: {len(self.vocabulary)} itens")
     
     def _load_knowledge_bases(self):
         """Carrega bases de conhecimento persistidas"""
+        loaded = 0
         try:
             if self.vocab_file.exists():
                 with open(self.vocab_file, 'r', encoding='utf-8') as f:
                     self.vocabulary = set(json.load(f))
+                    loaded += 1
             
             if self.phrases_file.exists():
                 with open(self.phrases_file, 'r', encoding='utf-8') as f:
                     self.phrases = set(json.load(f))
+                    loaded += 1
             
             if self.concepts_file.exists():
                 with open(self.concepts_file, 'r', encoding='utf-8') as f:
                     self.concepts = json.load(f)
+                    loaded += 1
             
             if self.patterns_file.exists():
                 with open(self.patterns_file, 'r', encoding='utf-8') as f:
                     self.patterns = json.load(f)
+                    loaded += 1
+            
+            if self.stats_file.exists():
+                with open(self.stats_file, 'r', encoding='utf-8') as f:
+                    self.generation_stats = defaultdict(int, json.load(f))
+                    
+            if loaded > 0:
+                print(f"[BRX Parameters] {loaded} bases de conhecimento carregadas")
                     
         except Exception as e:
             print(f"[BRX Parameters] Erro ao carregar bases: {e}")
@@ -98,6 +122,8 @@ class BRXParameterGenerator:
     def _save_vocabulary(self):
         """Salva vocabulário no HD"""
         try:
+            # CORREÇÃO: Garante que o diretório existe
+            self.vocab_file.parent.mkdir(parents=True, exist_ok=True)
             with open(self.vocab_file, 'w', encoding='utf-8') as f:
                 json.dump(list(self.vocabulary), f, ensure_ascii=False, indent=2)
         except Exception as e:
@@ -106,10 +132,20 @@ class BRXParameterGenerator:
     def _save_phrases(self):
         """Salva frases no HD"""
         try:
+            self.phrases_file.parent.mkdir(parents=True, exist_ok=True)
             with open(self.phrases_file, 'w', encoding='utf-8') as f:
                 json.dump(list(self.phrases), f, ensure_ascii=False, indent=2)
         except Exception as e:
             print(f"[BRX Parameters] Erro ao salvar frases: {e}")
+    
+    def _save_stats(self):
+        """CORREÇÃO: Salva estatísticas de geração"""
+        try:
+            self.stats_file.parent.mkdir(parents=True, exist_ok=True)
+            with open(self.stats_file, 'w', encoding='utf-8') as f:
+                json.dump(dict(self.generation_stats), f, ensure_ascii=False, indent=2)
+        except Exception as e:
+            print(f"[BRX Parameters] Erro ao salvar estatísticas: {e}")
     
     def generate_letter_params(self, count: int = 10, context: str = "") -> List[AgentParameter]:
         """Gera parâmetros de letras individuais"""
@@ -135,6 +171,7 @@ class BRXParameterGenerator:
             params.append(param)
             self.generation_stats["letters"] += 1
         
+        self._save_stats()
         return params
     
     def generate_word_params(self, count: int = 10, context: str = "") -> List[AgentParameter]:
@@ -167,6 +204,7 @@ class BRXParameterGenerator:
             self.generation_stats["words"] += 1
         
         self._save_vocabulary()
+        self._save_stats()
         return params
     
     def generate_phrase_params(self, count: int = 5, context: str = "") -> List[AgentParameter]:
@@ -218,6 +256,7 @@ class BRXParameterGenerator:
             self.generation_stats["phrases"] += 1
         
         self._save_phrases()
+        self._save_stats()
         return params
     
     def generate_number_params(self, count: int = 10, context: str = "") -> List[AgentParameter]:
@@ -261,6 +300,7 @@ class BRXParameterGenerator:
             params.append(param)
             self.generation_stats["numbers"] += 1
         
+        self._save_stats()
         return params
     
     def generate_concept_params(self, count: int = 5, context: str = "") -> List[AgentParameter]:
@@ -326,11 +366,13 @@ class BRXParameterGenerator:
         
         # Salva conceitos
         try:
+            self.concepts_file.parent.mkdir(parents=True, exist_ok=True)
             with open(self.concepts_file, 'w', encoding='utf-8') as f:
                 json.dump(self.concepts, f, ensure_ascii=False, indent=2)
         except Exception as e:
             print(f"[BRX Parameters] Erro ao salvar conceitos: {e}")
         
+        self._save_stats()
         return params
     
     def generate_vocabulary_params(self, count: int = 20, context: str = "") -> List[AgentParameter]:
@@ -373,6 +415,7 @@ class BRXParameterGenerator:
             self.generation_stats["vocabulary"] += 1
         
         self._save_vocabulary()
+        self._save_stats()
         return params
     
     def generate_pattern_params(self, count: int = 5, context: str = "") -> List[AgentParameter]:
@@ -412,11 +455,13 @@ class BRXParameterGenerator:
         
         # Salva padrões
         try:
+            self.patterns_file.parent.mkdir(parents=True, exist_ok=True)
             with open(self.patterns_file, 'w', encoding='utf-8') as f:
                 json.dump(self.patterns, f, ensure_ascii=False, indent=2)
         except Exception as e:
             print(f"[BRX Parameters] Erro ao salvar padrões: {e}")
         
+        self._save_stats()
         return params
     
     def _generate_random_word(self, min_len: int = 3, max_len: int = 10) -> str:
@@ -494,3 +539,21 @@ class BRXParameterGenerator:
             "stats": dict(self.generation_stats),
             "exported_at": datetime.now().isoformat()
         }
+    
+    def export_to_file(self, filename: str = None) -> Path:
+        """CORREÇÃO: Exporta todos os parâmetros para um arquivo JSON"""
+        if filename is None:
+            filename = f"brx_params_export_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        
+        export_path = self.storage_path / "hd" / "parametros" / filename
+        export_path.parent.mkdir(parents=True, exist_ok=True)
+        
+        try:
+            data = self.export_all_params()
+            with open(export_path, 'w', encoding='utf-8') as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+            print(f"[BRX Parameters] Parâmetros exportados para: {export_path}")
+            return export_path
+        except Exception as e:
+            print(f"[BRX Parameters] Erro ao exportar: {e}")
+            return None
