@@ -1,35 +1,30 @@
-# BRX-AGENT v2.0
-# Agente Auto-Evolutivo Multi-Cérebro
-# 
-# Componentes principais:
-# - core: Núcleo do sistema e tipos fundamentais
-# - consciousness: Sistema de consciência e auto-identidade
-# - minds: Sistema de 8 mentes com debate circular
-# - parameters: Gerador automático de parâmetros
-# - search: Módulo de pesquisa Duck DNS
-#
-# Arquivos de execução:
-# - brx_autonomous.py: Modo autônomo contínuo (deixe rodando)
-# - brx_chat.py: Interface de chat interativa
+"""
+BRX-AGENT v3.0
+==============
+Sistema de Processamento de Linguagem Natural 100% Offline
 
-__version__ = "2.0.0"
-__author__ = "BRX-AGENT"
-__description__ = "Agente Auto-Evolutivo Multi-Cérebro"
+Processamento em 8 camadas:
+1. Caracteres    2. Léxico      3. Sintática   4. Semântica
+5. Lógica        6. Memória     7. Geração     8. Validação
 
-from core.brx_engine import BRXCore, get_brx_core
-from consciousness.self_awareness import BRXConsciousnessEngine, get_consciousness_engine
-from minds.eight_minds import EightMindsSystem, Mind
-from parameters.auto_generator import BRXParameterGenerator
-from search.duckdns_search import DuckDNSSearcher, get_searcher
+Uso:
+    from core import BRXCoreV3
+    
+    brx = BRXCoreV3()
+    response = brx.chat("Qual estado não tem a letra A?")
+    print(response)
+"""
+
+__version__ = "3.0.0"
+__author__ = "DragonBRX"
+
+from core import BRXCoreV3, get_brx_core_v3
+from core.knowledge_base import BRXKnowledgeBase
+from core.text_processor import GranularTextProcessor
 
 __all__ = [
-    "BRXCore",
-    "get_brx_core",
-    "BRXConsciousnessEngine",
-    "get_consciousness_engine",
-    "EightMindsSystem",
-    "Mind",
-    "BRXParameterGenerator",
-    "DuckDNSSearcher",
-    "get_searcher",
+    'BRXCoreV3',
+    'get_brx_core_v3',
+    'BRXKnowledgeBase',
+    'GranularTextProcessor',
 ]
