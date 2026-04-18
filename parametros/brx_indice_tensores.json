@@ -1,0 +1,2671 @@
+{
+  "model.embed_tokens.weight": {
+    "nome_brx": "modelo.embedding_tokens.peso",
+    "shape": [
+      102400,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 419430400,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.0.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.0.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.0.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.0.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.0.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.0.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.0.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.0.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.0.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.0.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.0.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.0.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.0.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.0.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.0.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.0.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.0.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.0.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.1.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.1.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.1.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.1.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.1.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.1.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.1.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.1.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.1.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.1.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.1.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.1.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.1.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.1.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.1.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.1.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.1.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.1.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.2.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.2.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.2.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.2.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.2.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.2.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.2.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.2.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.2.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.2.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.2.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.2.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.2.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.2.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.2.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.2.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.2.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.2.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.3.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.3.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.3.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.3.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0000.safetensors"
+  },
+  "model.layers.3.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.3.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.3.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.3.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.3.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.3.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.3.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.3.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.3.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.3.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.3.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.3.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.3.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.3.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.4.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.4.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.4.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.4.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.4.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.4.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.4.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.4.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.4.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.4.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.4.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.4.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.4.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.4.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.4.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.4.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.4.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.4.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.5.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.5.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.5.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.5.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.5.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.5.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.5.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.5.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.5.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.5.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.5.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.5.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.5.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.5.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.5.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.5.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.5.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.5.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.6.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.6.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.6.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.6.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.6.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.6.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.6.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.6.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.6.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.6.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0001.safetensors"
+  },
+  "model.layers.6.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.6.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.6.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.6.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.6.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.6.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.6.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.6.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.7.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.7.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.7.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.7.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.7.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.7.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.7.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.7.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.7.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.7.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.7.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.7.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.7.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.7.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.7.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.7.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.7.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.7.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.8.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.8.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.8.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.8.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.8.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.8.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.8.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.8.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.8.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.8.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.8.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.8.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.8.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.8.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.8.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.8.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.8.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.8.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.9.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.9.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.9.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.9.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.9.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.9.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.9.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.9.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.9.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.9.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.9.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.9.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.9.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.9.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.9.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.9.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0002.safetensors"
+  },
+  "model.layers.9.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.9.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.10.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.10.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.10.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.10.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.10.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.10.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.10.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.10.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.10.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.10.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.10.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.10.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.10.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.10.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.10.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.10.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.10.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.10.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.11.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.11.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.11.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.11.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.11.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.11.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.11.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.11.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.11.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.11.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.11.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.11.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.11.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.11.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.11.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.11.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.11.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.11.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.12.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.12.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.12.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.12.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.12.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.12.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.12.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.12.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.12.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.12.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.12.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.12.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.12.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.12.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.12.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.12.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.12.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.12.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.13.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.13.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.13.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.13.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0003.safetensors"
+  },
+  "model.layers.13.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.13.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.13.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.13.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.13.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.13.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.13.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.13.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.13.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.13.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.13.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.13.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.13.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.13.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.14.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.14.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.14.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.14.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.14.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.14.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.14.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.14.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.14.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.14.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.14.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.14.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.14.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.14.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.14.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.14.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.14.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.14.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.15.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.15.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.15.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.15.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.15.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.15.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.15.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.15.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.15.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.15.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.15.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.15.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.15.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.15.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.15.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.15.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.15.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.15.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.16.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.16.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.16.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.16.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.16.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.16.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.16.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.16.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.16.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.16.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0004.safetensors"
+  },
+  "model.layers.16.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.16.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.16.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.16.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.16.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.16.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.16.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.16.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.17.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.17.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.17.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.17.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.17.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.17.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.17.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.17.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.17.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.17.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.17.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.17.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.17.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.17.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.17.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.17.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.17.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.17.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.18.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.18.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.18.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.18.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.18.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.18.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.18.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.18.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.18.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.18.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.18.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.18.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.18.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.18.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.18.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.18.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.18.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.18.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.19.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.19.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.19.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.19.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.19.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.19.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.19.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.19.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.19.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.19.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.19.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.19.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.19.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.19.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.19.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.19.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0005.safetensors"
+  },
+  "model.layers.19.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.19.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.20.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.20.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.20.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.20.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.20.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.20.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.20.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.20.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.20.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.20.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.20.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.20.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.20.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.20.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.20.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.20.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.20.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.20.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.21.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.21.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.21.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.21.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.21.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.21.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.21.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.21.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.21.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.21.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.21.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.21.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.21.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.21.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.21.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.21.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.21.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.21.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.22.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.22.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.22.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.22.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.22.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.22.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.22.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.22.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.22.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.22.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.22.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.22.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.22.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.22.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.22.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.22.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.22.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.22.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.23.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.23.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.23.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.23.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0006.safetensors"
+  },
+  "model.layers.23.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.23.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.23.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.23.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.23.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.23.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.23.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.23.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.23.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.23.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.23.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.23.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.23.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.23.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.24.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.24.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.24.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.24.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.24.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.24.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.24.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.24.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.24.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.24.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.24.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.24.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.24.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.24.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.24.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.24.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.24.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.24.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.25.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.25.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.25.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.25.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.25.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.25.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.25.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.25.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.25.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.25.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.25.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.25.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.25.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.25.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.25.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.25.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.25.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.25.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.26.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.26.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.26.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.26.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.26.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.26.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.26.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.26.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.26.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.26.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0007.safetensors"
+  },
+  "model.layers.26.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.26.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.26.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.26.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.26.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.26.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.26.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.26.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.27.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.27.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.27.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.27.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.27.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.27.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.27.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.27.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.27.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.27.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.27.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.27.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.27.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.27.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.27.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.27.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.27.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.27.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.28.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.28.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.28.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.28.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.28.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.28.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.28.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.28.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.28.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.28.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.28.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.28.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.28.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.28.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.28.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.28.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.28.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.28.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.29.self_attn.q_proj.weight": {
+    "nome_brx": "modelo.camadas.29.atencao.projecao_consulta.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.29.self_attn.k_proj.weight": {
+    "nome_brx": "modelo.camadas.29.atencao.projecao_chave.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.29.self_attn.v_proj.weight": {
+    "nome_brx": "modelo.camadas.29.atencao.projecao_valor.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.29.self_attn.o_proj.weight": {
+    "nome_brx": "modelo.camadas.29.atencao.projecao_saida.peso",
+    "shape": [
+      4096,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 16777216,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.29.mlp.gate_proj.weight": {
+    "nome_brx": "modelo.camadas.29.mlp.projecao_porta.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.29.mlp.up_proj.weight": {
+    "nome_brx": "modelo.camadas.29.mlp.projecao_subida.peso",
+    "shape": [
+      11008,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.29.mlp.down_proj.weight": {
+    "nome_brx": "modelo.camadas.29.mlp.projecao_descida.peso",
+    "shape": [
+      4096,
+      11008
+    ],
+    "dtype": "torch.float16",
+    "num_params": 45088768,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.29.input_layernorm.weight": {
+    "nome_brx": "modelo.camadas.29.norma_entrada.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0008.safetensors"
+  },
+  "model.layers.29.post_attention_layernorm.weight": {
+    "nome_brx": "modelo.camadas.29.norma_pos_atencao.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0009.safetensors"
+  },
+  "model.norm.weight": {
+    "nome_brx": "modelo.normalizacao_final.peso",
+    "shape": [
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 4096,
+    "shard": "shard_0009.safetensors"
+  },
+  "lm_head.weight": {
+    "nome_brx": "cabeca_linguagem.peso",
+    "shape": [
+      102400,
+      4096
+    ],
+    "dtype": "torch.float16",
+    "num_params": 419430400,
+    "shard": "shard_0009.safetensors"
+  }
+}

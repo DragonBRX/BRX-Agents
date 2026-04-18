@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "nome": "BRX-Params-v1",
+    "base_original": "deepseek-ai/deepseek-llm-7b-base",
+    "versao": "1.0.0",
+    "idioma": "pt-BR",
+    "total_parametros": 6910365696,
+    "num_tensores": 273,
+    "num_shards": 10,
+    "descricao": "Parâmetros do DeepSeek traduzidos para PT-BR. Estrutura BRX: Letras→Palavras→Frases. Pesos divididos em shards para carregamento seletivo — leve em RAM/CPU, pesado em disco (HD)."
+  },
+  "arquitetura": {
+    "tamanho_oculto": 4096,
+    "num_camadas_ocultas": 30,
+    "num_cabecas_atencao": 32,
+    "num_cabecas_chave_valor": 32,
+    "tamanho_intermediario": 11008,
+    "tamanho_vocabulario": 102400,
+    "max_posicoes_embedding": 4096,
+    "epsilon_normalizacao": 1e-06,
+    "theta_rope": 10000.0,
+    "funcao_ativacao": "silu",
+    "tipo_tensor": "float16"
+  },
+  "sistema_vocabulario": {
+    "niveis": {
+      "letras": {
+        "arquivo": "brx_letras.json",
+        "classes": [
+          "conector",
+          "nucleo",
+          "qualificador",
+          "neutro"
+        ]
+      },
+      "palavras": {
+        "arquivo": "brx_palavras.json",
+        "classes": [
+          "positivo",
+          "negativo",
+          "neutro"
+        ],
+        "peso_positivo": 1.5,
+        "peso_negativo": -1.5
+      },
+      "frases": {
+        "arquivo": "brx_frases.json"
+      }
+    }
+  },
+  "sistema_agentes": {
+    "descricao": "Agentes dinâmicos — ativados por tarefa, não fixos. Podem existir milhares; só os relevantes são ativados. Todos em sincronia, todos veem o que os outros fazem.",
+    "quantidade": "dinamica_por_tarefa",
+    "sincronia": true,
+    "visibilidade": "todos_veem_todos_em_tempo_real"
+  },
+  "armazenamento": {
+    "hd": "shards de pesos, vocabulário, histórico, aprendizado",
+    "ssd": "núcleo de execução sandbox",
+    "aprende_com_uso": true,
+    "consumo_ram": "baixo — carrega só o shard necessário"
+  },
+  "analise_prompt": {
+    "analise_token_a_token": true,
+    "detecta_erros_digitacao": true,
+    "interpreta_intencao": true,
+    "usa_criatividade": true,
+    "classificacao_semantica": true
+  },
+  "arquivos": {
+    "indice_tensores": "brx_indice_tensores.json",
+    "letras": "brx_letras.json",
+    "palavras": "brx_palavras.json",
+    "frases": "brx_frases.json",
+    "tokenizer": "tokenizer/",
+    "shards": [
+      "shards/shard_0000.safetensors",
+      "shards/shard_0001.safetensors",
+      "shards/shard_0002.safetensors",
+      "shards/shard_0003.safetensors",
+      "shards/shard_0004.safetensors",
+      "shards/shard_0005.safetensors",
+      "shards/shard_0006.safetensors",
+      "shards/shard_0007.safetensors",
+      "shards/shard_0008.safetensors",
+      "shards/shard_0009.safetensors"
+    ]
+  }
+}
