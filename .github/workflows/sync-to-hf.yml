@@ -19,71 +19,87 @@ jobs:
           git config --global user.email "dragonbrx@example.com"
           git config --global user.name "DragonBRX"
 
-      - name: Clone HF repo and sync
+      - name: Setup HF Authentication
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          # Configura git para usar o token como Bearer
           git config --global http.https://huggingface.co/.extraHeader "Authorization: Bearer ${{ secrets.HF_TOKEN }}"
 
-          # Clone HF repo sem checkout (apenas .git)
-          git clone --no-checkout https://huggingface.co/DragonBRX/BRX hf_repo ||             (git -C hf_repo remote set-url origin https://huggingface.co/DragonBRX/BRX && git -C hf_repo fetch)
+      - name: Sync files to HF
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          # Inicializa novo repo com o remote do HF
+          mkdir hf_sync && cd hf_sync
+          git init
+          git remote add origin https://huggingface.co/DragonBRX/BRX
 
-          # Preserva os arquivos existentes do HF (parametros/, .gitattributes)
-          mkdir -p preserve
-          cd hf_repo
+          # Pula download de arquivos LFS (muito grandes)
+          export GIT_LFS_SKIP_SMUDGE=1
 
-          # Checkout apenas dos arquivos que queremos preservar
-          git checkout HEAD -- parametros/ .gitattributes 2>/dev/null || true
-          cd ..
-          cp -r hf_repo/parametros preserve/ 2>/dev/null || true
-          cp hf_repo/.gitattributes preserve/ 2>/dev/null || true
+          # Faz shallow fetch para pegar o histórico
+          git fetch --depth=1 origin main
 
-          # Limpa tudo exceto .git
-          cd hf_repo
+          # Cria branch main baseada no remote
+          git checkout -b main origin/main
+
+          echo "HF repo clonado. Arquivos atuais:"
+          ls -la
+
+          # Lista os arquivos que serão preservados (do HF)
+          echo "Preservando parametros/ e .gitattributes..."
+          mkdir -p ../preserve
+          cp -r parametros ../preserve/ 2>/dev/null || true
+          cp .gitattributes ../preserve/ 2>/dev/null || true
+
+          # Remove TODOS os arquivos tracked (exceto .git)
+          git rm -rf . 2>/dev/null || true
           find . -not -path './.git/*' -not -name '.git' -delete 2>/dev/null || true
-          cd ..
 
           # Copia todos os arquivos do GitHub repo
-          cp -r agents hf_repo/ 2>/dev/null || true
-          cp -r consciousness hf_repo/ 2>/dev/null || true
-          cp -r core hf_repo/ 2>/dev/null || true
-          cp -r dashboard hf_repo/ 2>/dev/null || true
-          cp -r minds hf_repo/ 2>/dev/null || true
-          cp -r parameters hf_repo/ 2>/dev/null || true
-          cp -r search hf_repo/ 2>/dev/null || true
-          cp -r utils hf_repo/ 2>/dev/null || true
+          cp -r ../agents . 2>/dev/null || true
+          cp -r ../consciousness . 2>/dev/null || true
+          cp -r ../core . 2>/dev/null || true
+          cp -r ../dashboard . 2>/dev/null || true
+          cp -r ../minds . 2>/dev/null || true
+          cp -r ../parameters . 2>/dev/null || true
+          cp -r ../search . 2>/dev/null || true
+          cp -r ../utils . 2>/dev/null || true
 
-          # Copia arquivos raiz
-          cp README.md hf_repo/ 2>/dev/null || true
-          cp requirements.txt hf_repo/ 2>/dev/null || true
-          cp setup.py hf_repo/ 2>/dev/null || true
-          cp __init__.py hf_repo/ 2>/dev/null || true
-          cp hf_hub.py hf_repo/ 2>/dev/null || true
-          cp brx_chat.py hf_repo/ 2>/dev/null || true
-          cp brx_chat_v3.py hf_repo/ 2>/dev/null || true
-          cp brx_autonomous.py hf_repo/ 2>/dev/null || true
-          cp brx_autonomous_v7.py hf_repo/ 2>/dev/null || true
-          cp brx_run.sh hf_repo/ 2>/dev/null || true
-          cp test_brx.py hf_repo/ 2>/dev/null || true
-          cp test_storage_path.py hf_repo/ 2>/dev/null || true
-          cp test_v3.py hf_repo/ 2>/dev/null || true
-          cp architecture.mmd hf_repo/ 2>/dev/null || true
-          cp architecture.png hf_repo/ 2>/dev/null || true
-          cp CORRECOES_README.md hf_repo/ 2>/dev/null || true
-          cp EXEMPLO_USO.md hf_repo/ 2>/dev/null || true
-          cp INSTALL.md hf_repo/ 2>/dev/null || true
-          cp README_V3.md hf_repo/ 2>/dev/null || true
-          cp README_V7.md hf_repo/ 2>/dev/null || true
+          cp ../README.md . 2>/dev/null || true
+          cp ../requirements.txt . 2>/dev/null || true
+          cp ../setup.py . 2>/dev/null || true
+          cp ../__init__.py . 2>/dev/null || true
+          cp ../hf_hub.py . 2>/dev/null || true
+          cp ../brx_chat.py . 2>/dev/null || true
+          cp ../brx_chat_v3.py . 2>/dev/null || true
+          cp ../brx_autonomous.py . 2>/dev/null || true
+          cp ../brx_autonomous_v7.py . 2>/dev/null || true
+          cp ../brx_run.sh . 2>/dev/null || true
+          cp ../test_brx.py . 2>/dev/null || true
+          cp ../test_storage_path.py . 2>/dev/null || true
+          cp ../test_v3.py . 2>/dev/null || true
+          cp ../architecture.mmd . 2>/dev/null || true
+          cp ../architecture.png . 2>/dev/null || true
+          cp ../CORRECOES_README.md . 2>/dev/null || true
+          cp ../EXEMPLO_USO.md . 2>/dev/null || true
+          cp ../INSTALL.md . 2>/dev/null || true
+          cp ../README_V3.md . 2>/dev/null || true
+          cp ../README_V7.md . 2>/dev/null || true
 
           # Restaura os arquivos preservados do HF
-          cp -r preserve/parametros hf_repo/ 2>/dev/null || true
-          cp preserve/.gitattributes hf_repo/ 2>/dev/null || true
+          cp -r ../preserve/parametros . 2>/dev/null || true
+          cp ../preserve/.gitattributes . 2>/dev/null || true
 
-          # Git commit e push
-          cd hf_repo
+          echo "Arquivos após sync:"
+          ls -la
+          echo ""
+          echo "Tamanho total:"
+          du -sh . 2>/dev/null || true
+
+          # Commit e push
           git add -A
           git commit -m "BRX-AGENT v3.0: Sincronizacao automatica GitHub -> HF Hub" || true
-          git push origin main
+          git push origin main --force
 
           echo "✓ Sync completo!"
