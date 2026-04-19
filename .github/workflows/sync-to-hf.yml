@@ -23,57 +23,67 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          # Clone HF repo (shallow, only .git)
-          git clone --depth 1 https://user:${HF_TOKEN}@huggingface.co/DragonBRX/BRX hf_repo
+          # Configura git para usar o token como Bearer
+          git config --global http.https://huggingface.co/.extraHeader "Authorization: Bearer ${{ secrets.HF_TOKEN }}"
+
+          # Clone HF repo sem checkout (apenas .git)
+          git clone --no-checkout https://huggingface.co/DragonBRX/BRX hf_repo ||             (git -C hf_repo remote set-url origin https://huggingface.co/DragonBRX/BRX && git -C hf_repo fetch)
 
           # Preserva os arquivos existentes do HF (parametros/, .gitattributes)
           mkdir -p preserve
+          cd hf_repo
+
+          # Checkout apenas dos arquivos que queremos preservar
+          git checkout HEAD -- parametros/ .gitattributes 2>/dev/null || true
+          cd ..
           cp -r hf_repo/parametros preserve/ 2>/dev/null || true
           cp hf_repo/.gitattributes preserve/ 2>/dev/null || true
 
           # Limpa tudo exceto .git
           cd hf_repo
           find . -not -path './.git/*' -not -name '.git' -delete 2>/dev/null || true
+          cd ..
 
           # Copia todos os arquivos do GitHub repo
-          cp -r ../agents . 2>/dev/null || true
-          cp -r ../consciousness . 2>/dev/null || true
-          cp -r ../core . 2>/dev/null || true
-          cp -r ../dashboard . 2>/dev/null || true
-          cp -r ../minds . 2>/dev/null || true
-          cp -r ../parameters . 2>/dev/null || true
-          cp -r ../search . 2>/dev/null || true
-          cp -r ../utils . 2>/dev/null || true
+          cp -r agents hf_repo/ 2>/dev/null || true
+          cp -r consciousness hf_repo/ 2>/dev/null || true
+          cp -r core hf_repo/ 2>/dev/null || true
+          cp -r dashboard hf_repo/ 2>/dev/null || true
+          cp -r minds hf_repo/ 2>/dev/null || true
+          cp -r parameters hf_repo/ 2>/dev/null || true
+          cp -r search hf_repo/ 2>/dev/null || true
+          cp -r utils hf_repo/ 2>/dev/null || true
 
           # Copia arquivos raiz
-          cp ../README.md . 2>/dev/null || true
-          cp ../requirements.txt . 2>/dev/null || true
-          cp ../setup.py . 2>/dev/null || true
-          cp ../__init__.py . 2>/dev/null || true
-          cp ../hf_hub.py . 2>/dev/null || true
-          cp ../brx_chat.py . 2>/dev/null || true
-          cp ../brx_chat_v3.py . 2>/dev/null || true
-          cp ../brx_autonomous.py . 2>/dev/null || true
-          cp ../brx_autonomous_v7.py . 2>/dev/null || true
-          cp ../brx_run.sh . 2>/dev/null || true
-          cp ../test_brx.py . 2>/dev/null || true
-          cp ../test_storage_path.py . 2>/dev/null || true
-          cp ../test_v3.py . 2>/dev/null || true
-          cp ../architecture.mmd . 2>/dev/null || true
-          cp ../architecture.png . 2>/dev/null || true
-          cp ../CORRECOES_README.md . 2>/dev/null || true
-          cp ../EXEMPLO_USO.md . 2>/dev/null || true
-          cp ../INSTALL.md . 2>/dev/null || true
-          cp ../README_V3.md . 2>/dev/null || true
-          cp ../README_V7.md . 2>/dev/null || true
+          cp README.md hf_repo/ 2>/dev/null || true
+          cp requirements.txt hf_repo/ 2>/dev/null || true
+          cp setup.py hf_repo/ 2>/dev/null || true
+          cp __init__.py hf_repo/ 2>/dev/null || true
+          cp hf_hub.py hf_repo/ 2>/dev/null || true
+          cp brx_chat.py hf_repo/ 2>/dev/null || true
+          cp brx_chat_v3.py hf_repo/ 2>/dev/null || true
+          cp brx_autonomous.py hf_repo/ 2>/dev/null || true
+          cp brx_autonomous_v7.py hf_repo/ 2>/dev/null || true
+          cp brx_run.sh hf_repo/ 2>/dev/null || true
+          cp test_brx.py hf_repo/ 2>/dev/null || true
+          cp test_storage_path.py hf_repo/ 2>/dev/null || true
+          cp test_v3.py hf_repo/ 2>/dev/null || true
+          cp architecture.mmd hf_repo/ 2>/dev/null || true
+          cp architecture.png hf_repo/ 2>/dev/null || true
+          cp CORRECOES_README.md hf_repo/ 2>/dev/null || true
+          cp EXEMPLO_USO.md hf_repo/ 2>/dev/null || true
+          cp INSTALL.md hf_repo/ 2>/dev/null || true
+          cp README_V3.md hf_repo/ 2>/dev/null || true
+          cp README_V7.md hf_repo/ 2>/dev/null || true
 
           # Restaura os arquivos preservados do HF
-          cp -r ../preserve/parametros . 2>/dev/null || true
-          cp ../preserve/.gitattributes . 2>/dev/null || true
+          cp -r preserve/parametros hf_repo/ 2>/dev/null || true
+          cp preserve/.gitattributes hf_repo/ 2>/dev/null || true
 
           # Git commit e push
+          cd hf_repo
           git add -A
-          git commit -m "BRX-AGENT v3.0: Sincronização automática GitHub -> HF Hub" || true
+          git commit -m "BRX-AGENT v3.0: Sincronizacao automatica GitHub -> HF Hub" || true
           git push origin main
 
           echo "✓ Sync completo!"
