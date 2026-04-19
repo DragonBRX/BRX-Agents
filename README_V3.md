@@ -1,256 +1,197 @@
-# BRX-AGENT v3.0 🧠
+# BRX-AGENT v3.0 - Sistema Multi-Agente Dinamico
 
-## Sistema de Processamento de Linguagem Natural 100% Offline
+![Arquitetura BRX](architecture.png)
 
-O BRX-Agent v3.0 é um sistema de inteligência artificial completamente offline que processa linguagem natural em **8 camadas** usando um **banco de conhecimento embutido** e **processamento simbólico**.
+## Agente Auto-Evolutivo Multi-Cerebro + 100+ Agentes Especializados
 
----
-
-## 🌟 Características Principais
-
-### ✅ 100% Offline
-- **Não depende de internet**
-- Todo processamento é local
-- Banco de conhecimento embutido
-
-### 🧠 8 Mentes em Camadas
-1. **Caracteres** - Analisa cada letra individualmente
-2. **Léxico** - Processa palavras e vocabulário
-3. **Sintática** - Analisa estrutura gramatical
-4. **Semântica** - Extrai significado e intenção
-5. **Lógica** - Aplica raciocínio lógico
-6. **Memória** - Acessa contexto da conversa
-7. **Geração** - Cria respostas coerentes
-8. **Validação** - Verifica e melhora respostas
-
-### 📚 Banco de Conhecimento Embutido
-- **Geografia**: Todos os 26 estados + DF do Brasil
-- **Linguagem**: Alfabeto completo, vocabulário base
-- **Matemática**: Números e propriedades
-- **Fatos gerais**: Dias, meses, cores, direções
-
-### 🔤 Processamento Granular
-Processa texto em múltiplas camadas:
-```
-Texto → Caracteres → Palavras → Frases → Conceitos
-```
+O BRX e um agente de inteligencia artificial com arquitetura unica que combina:
+- **8 mentes base** que funcionam como uma equipe de especialistas (sempre ativas)
+- **100+ agentes especializados** que sao ativados dinamicamente conforme a tarefa
+- Sistema de **orquestracao inteligente** que seleciona os melhores especialistas
+- **Workspace colaborativo** onde todos os agentes veem o trabalho dos outros em tempo real
 
 ---
 
-## 🚀 Instalação
+## O que ha de novo na v3.0?
+
+### Sistema Multi-Agente Dinamico
+- **100+ agentes especializados** em 12 categorias diferentes
+- Ativacao automatica baseada na analise da tarefa
+- Numero configuravel de agentes simultaneos (padrao: 8, max: 16)
+- Todos os agentes trabalham em paralelo usando threads
+- Visibilidade cruzada: cada agente ve o que os outros estao fazendo
+
+### Categorias de Agentes
+| Categoria | Quantidade | Exemplos |
+|-----------|-----------|----------|
+| Development | 30+ | Backend, Frontend, Mobile, Game, AI/ML, Blockchain |
+| Design | 15+ | UI, UX, 3D, Motion, Graphic, Accessibility |
+| Content | 12+ | Technical Writer, Copywriter, SEO, Newsletter |
+| Data | 10+ | Data Engineer, Data Scientist, MLOps, Visualization |
+| Security | 8+ | AppSec, Penetration Tester, Cloud Security, Compliance |
+| Infrastructure | 12+ | DevOps, SRE, Cloud Architect, Kubernetes |
+| Business | 8+ | Product Manager, Agile Coach, Growth Hacker |
+| Research | 8+ | AI Researcher, Market Research, User Research |
+| Creative | 20+ | Music Producer, Video, Photography, Concept Art |
+| Communication | 5+ | Customer Support, Community Manager |
+| Quality | 6+ | QA Analyst, Automation Engineer, Performance |
+| Project | 5+ | Technical PM, Scrum Master |
+
+### Como Funciona
+
+```
+Usuario: "Criar um site profissional de portfolio"
+
+[Analisador de Tarefas]
+  Detecta: website, profissional, portfolio
+  Categorias: DEVELOPMENT, DESIGN
+  
+[Orquestrador]
+  Ativa agentes especializados:
+  - Bianca (Frontend Developer)
+  - Arthur (Backend Developer)  
+  - Isabela (UI Designer)
+  - Juliana (UX Designer)
+  - Carlos (Fullstack Developer)
+  - Lara (Motion Designer)
+  - Mia (Accessibility Specialist)
+  - Lucas (QA Analyst)
+
+[Execucao Paralela - 8 threads]
+  Todos os agentes trabalham simultaneamente
+  Cada um ve o progresso dos outros
+  
+[Workspace Colaborativo]
+  - Contribuicoes visiveis em tempo real
+  - Reacoes cruzadas entre agentes
+  - Decisoes tomadas coletivamente
+  
+[Resultado Consolidado]
+  - Consenso das 8 mentes base
+  + Contribuicoes dos agentes especializados
+  = Resposta completa e especializada
+```
+
+---
+
+## Comando Unico de Instalacao e Execucao
 
 ```bash
-# Clone o repositório
-git clone https://github.com/DragonBRX/BRX-Agents.git
+curl -sO https://raw.githubusercontent.com/DragonBRX/BRX-Agents/main/brx_run.sh && chmod +x brx_run.sh && ./brx_run.sh
+```
+
+---
+
+## Uso do Chat v3.0
+
+### Iniciar o chat
+```bash
+python brx_chat_v3.py
+```
+
+### Comandos de Agente
+
+```
+/agents                    - Lista todos os 100+ agentes
+/agents development        - Filtra por categoria
+/agent dev_frontend        - Detalhes de um agente especifico
+/categories                - Mostra categorias disponiveis
+/analyze <tarefa>          - Analisa sem executar
+/task <tarefa>             - Processa com equipe especializada
+/multiagent on             - Ativa modo multi-agente
+/multiagent off            - Desativa (modo legacy)
+/maxagents 12              - Define numero de agentes
+/workspace                 - Mostra workspace colaborativo
+```
+
+### Exemplos de Tarefas
+
+```
+[BRX] Criar um e-commerce com React e Node.js
+      -> Ativa: Frontend, Backend, Fullstack, UI, UX, E-commerce, QA
+
+[BRX] Desenvolver um app mobile de delivery
+      -> Ativa: Mobile, Backend, UI, UX, QA, DevOps
+
+[BRX] Criar identidade visual para minha startup
+      -> Ativa: Graphic Designer, UI, UX, Copywriter
+
+[BRX] Fazer analise de dados de vendas
+      -> Ativa: Data Analyst, Data Scientist, Visualization
+
+[BRX] Construir pipeline de CI/CD
+      -> Ativa: DevOps, SRE, Cloud, Security
+
+[BRX] Criar um jogo 2D plataforma
+      -> Ativa: Game Dev, Concept Art, Game UI, Sound Designer
+```
+
+---
+
+## Configuracao de Agentes
+
+### Padrao de Threads
+O BRX detecta automaticamente quantos threads seu CPU tem:
+- **16+ threads**: 12 agentes
+- **8-15 threads**: 8 agentes (padrao)
+- **4-7 threads**: 4 agentes
+- **1-3 threads**: 2 agentes
+
+### Personalizar Quantidade
+```bash
+# 4 agentes
+python brx_chat_v3.py --max-agents 4
+
+# 12 agentes
+python brx_chat_v3.py --max-agents 12
+
+# No chat
+/maxagents 6
+```
+
+---
+
+## Solucao para o Erro: externally-managed-environment
+
+O comando unico acima ja resolve este erro automaticamente. Para comandos manuais:
+
+```bash
 cd BRX-Agents
+./venv/bin/python3 -m pip install -r requirements.txt
 
-# Execute o chat
-python brx_chat_v3.py
+# Modo autonomo
+./venv/bin/python3 brx_autonomous.py
+
+# Chat interativo v3.0
+./venv/bin/python3 brx_chat_v3.py
+
+# Chat com 12 agentes
+./venv/bin/python3 brx_chat_v3.py --max-agents 12
 ```
 
 ---
 
-## 💬 Uso
+## Caracteristicas Principais
 
-### Chat Interativo
-```bash
-python brx_chat_v3.py
-```
+### Arquitetura de 8 Mentes Base (sempre ativas)
+- **Designer**: Estrutura e padroes de dados
+- **Analista**: Logica e consistencia tecnica
+- **Inovador**: Abordagens criativas e novas perspectivas
+- **Critico**: Identificacao de falhas e riscos (Red Teaming)
+- **Revisor**: Qualidade textual e clareza
+- **Validador**: Coerencia tematica e precisao
+- **Estrategista**: Planejamento e utilidade pratica
+- **Memoria**: Contexto historico e persistencia
 
-### Modo Verbose (mostra processamento das mentes)
-```bash
-python brx_chat_v3.py --verbose
-```
-
-### Executar Testes
-```bash
-python test_v3.py
-```
-
----
-
-## 📝 Exemplos de Uso
-
-### Saudação Simples
-```
-👤 Você: Oi
-🤖 BRX: Olá! Sou o BRX, pronto para ajudar.
-```
-
-### Pergunta com Restrição de Letra
-```
-👤 Você: Qual estado do Brasil não tem a letra A?
-🤖 BRX: Encontrei 7 resultado(s): 
-        Sergipe, Tocantins, Rio de Janeiro, 
-        Rio Grande do Sul, Rio Grande do Norte, 
-        Espírito Santo, Distrito Federal
-```
-
-### Listar Estados
-```
-👤 Você: Liste os estados do Brasil
-🤖 BRX: Aqui está a lista com 27 item(ns): 
-        Acre, Alagoas, Amapá, Amazonas, 
-        Bahia, Ceará, Distrito Federal...
-```
-
-### Comandos Especiais
-```
-👤 Você: estados          # Lista todos os estados
-👤 Você: sem letra A      # Estados sem a letra A
-👤 Você: estatisticas     # Mostra estatísticas
-👤 Você: ajuda            # Mostra comandos disponíveis
-👤 Você: sair             # Encerra o chat
-```
+### Sistema Multi-Agente (ativado por tarefa)
+- **100+ agentes** em 12 categorias
+- **Personalidade unica** para cada agente (precise, creative, pragmatic, analytical, etc.)
+- **Skills especificas** por agente
+- **Linguagens e ferramentas** especializadas
+- **Ativacao inteligente** baseada em palavras-chave da tarefa
+- **Execucao paralela** com threads
+- **Visibilidade cruzada** no workspace
 
 ---
 
-## 🏗️ Arquitetura
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        BRX-AGENT v3.0                       │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐  │
-│  │   ENTRADA    │───▶│ PROCESSAMENTO│───▶│   SAÍDA      │  │
-│  │   (Texto)    │    │  Granular    │    │  (Resposta)  │  │
-│  └──────────────┘    └──────────────┘    └──────────────┘  │
-│                              │                              │
-│                              ▼                              │
-│  ┌──────────────────────────────────────────────────────┐  │
-│  │              SISTEMA DE 8 MENTES                      │  │
-│  ├──────────┬──────────┬──────────┬──────────┬──────────┤  │
-│  │Caracteres│  Léxico  │Sintática │Semântica │  Lógica  │  │
-│  │  (1)     │   (2)    │   (3)    │   (4)    │   (5)    │  │
-│  └──────────┴──────────┴──────────┴──────────┴──────────┘  │
-│  ┌──────────┬──────────┬──────────┐                         │
-│  │  Memória │ Geração  │Validação │                         │
-│  │   (6)    │   (7)    │   (8)    │                         │
-│  └──────────┴──────────┴──────────┘                         │
-│                              │                              │
-│                              ▼                              │
-│  ┌──────────────────────────────────────────────────────┐  │
-│  │           BANCO DE CONHECIMENTO                       │  │
-│  ├──────────┬──────────┬──────────┬──────────┐          │  │
-│  │Geografia │Linguagem │Matemática│  Geral   │          │  │
-│  │ (Estados│(Alfabeto │(Números) │(Fatos)   │          │  │
-│  │Cidades) │Palavras) │          │          │          │  │
-│  └──────────┴──────────┴──────────┴──────────┘          │  │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 📊 Estatísticas
-
-### Banco de Conhecimento
-- **Geografia**: 50+ entradas (estados, capitais, regiões)
-- **Linguagem**: 100+ entradas (alfabeto, palavras)
-- **Matemática**: 1000+ entradas (números 0-1000)
-- **Geral**: 20+ entradas (fatos comuns)
-
-### Parâmetros
-- **Letras**: 52+ (a-z, A-Z, acentuadas)
-- **Dígitos**: 10 (0-9)
-- **Símbolos**: 30+
-- **Vocabulário**: 200+ palavras
-
----
-
-## 🔧 Componentes
-
-| Arquivo | Descrição |
-|---------|-----------|
-| `core/brx_engine_v3.py` | Núcleo principal do sistema |
-| `core/knowledge_base.py` | Banco de conhecimento embutido |
-| `core/text_processor.py` | Processador granular de texto |
-| `minds/eight_minds_v3.py` | Sistema de 8 mentes |
-| `parameters/parameter_generator_v3.py` | Gerador de parâmetros |
-| `brx_chat_v3.py` | Interface de chat |
-| `test_v3.py` | Testes automatizados |
-
----
-
-## 🎯 Capacidades
-
-### ✅ O que o BRX pode fazer:
-- Responder saudações
-- Listar estados do Brasil
-- Responder perguntas com restrições de letras
-- Processar texto em múltiplas camadas
-- Manter contexto da conversa
-- Aprender com interações
-
-### 🚧 Limitações:
-- Conhecimento limitado ao banco embutido
-- Não acessa internet para novas informações
-- Processamento simbólico (não neural)
-
----
-
-## 🔄 Comparação v2.0 vs v3.0
-
-| Feature | v2.0 | v3.0 |
-|---------|------|------|
-| Dependência de Web | Sim (DuckDNS) | ❌ Não |
-| Processamento | Simples | Granular (8 camadas) |
-| Banco de Conhecimento | Mínimo | Completo |
-| Sistema de Mentes | 8 mentes básicas | 8 mentes em camadas |
-| Parâmetros | Básicos | Completos (letras, dígitos, símbolos) |
-| Respostas | Baseadas em web | Baseadas em conhecimento embutido |
-| Independência | Parcial | 100% Offline |
-
----
-
-## 🛠️ Desenvolvimento
-
-### Estrutura de Pastas
-```
-BRX-Agents/
-├── core/                      # Núcleo do sistema
-│   ├── brx_engine_v3.py      # Motor principal
-│   ├── knowledge_base.py      # Banco de conhecimento
-│   ├── text_processor.py      # Processador de texto
-│   └── __init__.py
-├── minds/                     # Sistema de mentes
-│   ├── eight_minds_v3.py     # 8 mentes em camadas
-│   └── __init__.py
-├── parameters/                # Gerador de parâmetros
-│   ├── parameter_generator_v3.py
-│   └── __init__.py
-├── brx_chat_v3.py            # Chat interativo
-├── test_v3.py                # Testes
-└── README_V3.md              # Esta documentação
-```
-
----
-
-## 📜 Licença
-
-Este projeto é open source. Sinta-se livre para usar, modificar e distribuir.
-
----
-
-## 🤝 Contribuição
-
-Contribuições são bem-vindas! Áreas para melhoria:
-- Expandir banco de conhecimento
-- Melhorar processamento semântico
-- Adicionar mais idiomas
-- Otimizar performance
-
----
-
-## 🙏 Agradecimentos
-
-Desenvolvido com foco em:
-- **Independência**: Sistema 100% offline
-- **Transparência**: Processamento explicável
-- **Eficiência**: Código otimizado e modular
-- **Escalabilidade**: Arquitetura expansível
-
----
-
-**BRX-AGENT v3.0** - *Inteligência Artificial Offline e Transparente* 🧠✨
+**"A inteligencia nao e apenas processar informacoes, mas evoluir a forma como processamos - agora com especialistas dinamicos."** - BRX v3.0
