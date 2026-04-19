@@ -1,0 +1,42 @@
+de letras e frases."
+    },
+    "model.layers.0.processamento_cognitivo.portal_logico.weight": {
+        "dimensoes": [
+            11008,
+            4096
+        ],
+        "tipo": "parametro_linguistico",
+        "descricao": "Estrutura adaptada de model.layers.0.mlp.gate_proj.weight para processamento de letras e frases."
+    },
+    "model.layers.0.processamento_cognitivo.expansao_vocabular.weight": {
+        "dimensoes": [
+            11008,
+            4096
+        ],
+        "tipo": "parametro_linguistico",
+        "descricao": "Estrutura adaptada de model.layers.0.mlp.up_proj.weight para processamento de letras e frases."
+    },
+    "model.layers.0.processamento_cognitivo.compressao_frase.weight": {
+        "dimensoes": [
+            4096,
+            11008
+        ],
+        "tipo": "parametro_linguistico",
+        "descricao": "Estrutura adaptada de model.layers.0.mlp.down_proj.weight para processamento de letras e frases."
+    },
+    "model.normalizacao_gramatical.weight": {
+        "dimensoes": [
+            4096
+        ],
+        "tipo": "parametro_linguistico",
+        "descricao": "Estrutura adaptada de model.norm.weight para processamento de letras e frases."
+    },
+    "cabeca_predicao_texto.weight": {
+        "dimensoes": [
+            102400,
+            4096
+        ],
+        "tipo": "parametro_linguistico",
+        "descricao": "Estrutura adaptada de lm_head.weight para processamento de letras e frases."
+    }
+}
