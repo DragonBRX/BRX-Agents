@@ -26,14 +26,10 @@ jobs:
           git config user.email "dragonbrx@example.com"
           git config user.name "DragonBRX"
 
-          # Configura autenticação para o HF usando credential helper
-          git config credential.helper '!f() { echo "username=oauth2"; echo "password=${HF_TOKEN}"; }; f'
-          git config http.https://huggingface.co/.extraHeader "Authorization: Bearer ${HF_TOKEN}"
+          # Adiciona remote com token embutido (formato oauth2)
+          git remote add origin "https://oauth2:${HF_TOKEN}@huggingface.co/DragonBRX/BRX"
 
-          # Adiciona remote
-          git remote add origin https://huggingface.co/DragonBRX/BRX
-
-          # Pula download de arquivos LFS (muito grandes)
+          # Pula download de arquivos LFS
           export GIT_LFS_SKIP_SMUDGE=1
 
           # Faz fetch do HF
@@ -89,7 +85,6 @@ jobs:
 
           echo "=== Arquivos após sync ==="
           ls -la
-          du -sh . 2>/dev/null || true
 
           # Commit e push
           git add -A
