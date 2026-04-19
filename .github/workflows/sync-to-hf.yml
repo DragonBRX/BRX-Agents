@@ -14,49 +14,45 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Git
-        run: |
-          git config --global user.email "dragonbrx@example.com"
-          git config --global user.name "DragonBRX"
-
-      - name: Setup HF Authentication
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: |
-          git config --global http.https://huggingface.co/.extraHeader "Authorization: Bearer ${{ secrets.HF_TOKEN }}"
-
       - name: Sync files to HF
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          # Inicializa novo repo com o remote do HF
+          set -e
+
+          # Inicializa novo repo
           mkdir hf_sync && cd hf_sync
           git init
+          git config user.email "dragonbrx@example.com"
+          git config user.name "DragonBRX"
+
+          # Configura autenticação para o HF usando credential helper
+          git config credential.helper '!f() { echo "username=oauth2"; echo "password=${HF_TOKEN}"; }; f'
+          git config http.https://huggingface.co/.extraHeader "Authorization: Bearer ${HF_TOKEN}"
+
+          # Adiciona remote
           git remote add origin https://huggingface.co/DragonBRX/BRX
 
           # Pula download de arquivos LFS (muito grandes)
           export GIT_LFS_SKIP_SMUDGE=1
 
-          # Faz shallow fetch para pegar o histórico
+          # Faz fetch do HF
           git fetch --depth=1 origin main
-
-          # Cria branch main baseada no remote
           git checkout -b main origin/main
 
-          echo "HF repo clonado. Arquivos atuais:"
+          echo "=== HF repo clonado ==="
           ls -la
 
-          # Lista os arquivos que serão preservados (do HF)
-          echo "Preservando parametros/ e .gitattributes..."
+          # Preserva arquivos do HF
           mkdir -p ../preserve
           cp -r parametros ../preserve/ 2>/dev/null || true
           cp .gitattributes ../preserve/ 2>/dev/null || true
 
-          # Remove TODOS os arquivos tracked (exceto .git)
+          # Remove todos os arquivos tracked
           git rm -rf . 2>/dev/null || true
           find . -not -path './.git/*' -not -name '.git' -delete 2>/dev/null || true
 
-          # Copia todos os arquivos do GitHub repo
+          # Copia arquivos do GitHub
           cp -r ../agents . 2>/dev/null || true
           cp -r ../consciousness . 2>/dev/null || true
           cp -r ../core . 2>/dev/null || true
@@ -87,19 +83,18 @@ jobs:
           cp ../README_V3.md . 2>/dev/null || true
           cp ../README_V7.md . 2>/dev/null || true
 
-          # Restaura os arquivos preservados do HF
+          # Restaura arquivos do HF
           cp -r ../preserve/parametros . 2>/dev/null || true
           cp ../preserve/.gitattributes . 2>/dev/null || true
 
-          echo "Arquivos após sync:"
+          echo "=== Arquivos após sync ==="
           ls -la
-          echo ""
-          echo "Tamanho total:"
           du -sh . 2>/dev/null || true
 
           # Commit e push
           git add -A
-          git commit -m "BRX-AGENT v3.0: Sincronizacao automatica GitHub -> HF Hub" || true
-          git push origin main --force
+          git status
+          git commit -m "BRX-AGENT v3.0: Sincronizacao automatica GitHub -> HF Hub" || echo "Nada para commitar"
+          git push origin main
 
           echo "✓ Sync completo!"
