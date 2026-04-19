@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-BRX-AGENT v2.0 - Script de Instalação
+BRX-AGENT v3.0 - Script de Instalação
+Sistema Multi-Agente com Consciência e 8 Mentes
 """
 
 from setuptools import setup, find_packages
@@ -13,12 +14,12 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="brx-agent",
-    version="2.0.0",
-    author="BRX-AGENT",
-    description="Agente Auto-Evolutivo Multi-Cérebro",
+    version="3.0.0",
+    author="DragonBRX",
+    description="BRX-AGENT: Sistema Multi-Agente com Consciência e 8 Mentes",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/DragonBRX/BRX-Agents",
+    url="https://huggingface.co/DragonBRX/BRX",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -31,6 +32,7 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
     ],
     python_requires=">=3.8",
     install_requires=requirements,
@@ -38,6 +40,7 @@ setup(
         "console_scripts": [
             "brx-autonomous=brx_autonomous:main",
             "brx-chat=brx_chat:main",
+            "brx-chat-v3=brx_chat_v3:main",
         ],
     },
 )
