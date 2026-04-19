@@ -1,0 +1,79 @@
+name: Sync to Hugging Face
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  sync-to-hf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitHub repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Git
+        run: |
+          git config --global user.email "dragonbrx@example.com"
+          git config --global user.name "DragonBRX"
+
+      - name: Clone HF repo and sync
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          # Clone HF repo (shallow, only .git)
+          git clone --depth 1 https://user:${HF_TOKEN}@huggingface.co/DragonBRX/BRX hf_repo
+
+          # Preserva os arquivos existentes do HF (parametros/, .gitattributes)
+          mkdir -p preserve
+          cp -r hf_repo/parametros preserve/ 2>/dev/null || true
+          cp hf_repo/.gitattributes preserve/ 2>/dev/null || true
+
+          # Limpa tudo exceto .git
+          cd hf_repo
+          find . -not -path './.git/*' -not -name '.git' -delete 2>/dev/null || true
+
+          # Copia todos os arquivos do GitHub repo
+          cp -r ../agents . 2>/dev/null || true
+          cp -r ../consciousness . 2>/dev/null || true
+          cp -r ../core . 2>/dev/null || true
+          cp -r ../dashboard . 2>/dev/null || true
+          cp -r ../minds . 2>/dev/null || true
+          cp -r ../parameters . 2>/dev/null || true
+          cp -r ../search . 2>/dev/null || true
+          cp -r ../utils . 2>/dev/null || true
+
+          # Copia arquivos raiz
+          cp ../README.md . 2>/dev/null || true
+          cp ../requirements.txt . 2>/dev/null || true
+          cp ../setup.py . 2>/dev/null || true
+          cp ../__init__.py . 2>/dev/null || true
+          cp ../hf_hub.py . 2>/dev/null || true
+          cp ../brx_chat.py . 2>/dev/null || true
+          cp ../brx_chat_v3.py . 2>/dev/null || true
+          cp ../brx_autonomous.py . 2>/dev/null || true
+          cp ../brx_autonomous_v7.py . 2>/dev/null || true
+          cp ../brx_run.sh . 2>/dev/null || true
+          cp ../test_brx.py . 2>/dev/null || true
+          cp ../test_storage_path.py . 2>/dev/null || true
+          cp ../test_v3.py . 2>/dev/null || true
+          cp ../architecture.mmd . 2>/dev/null || true
+          cp ../architecture.png . 2>/dev/null || true
+          cp ../CORRECOES_README.md . 2>/dev/null || true
+          cp ../EXEMPLO_USO.md . 2>/dev/null || true
+          cp ../INSTALL.md . 2>/dev/null || true
+          cp ../README_V3.md . 2>/dev/null || true
+          cp ../README_V7.md . 2>/dev/null || true
+
+          # Restaura os arquivos preservados do HF
+          cp -r ../preserve/parametros . 2>/dev/null || true
+          cp ../preserve/.gitattributes . 2>/dev/null || true
+
+          # Git commit e push
+          git add -A
+          git commit -m "BRX-AGENT v3.0: Sincronização automática GitHub -> HF Hub" || true
+          git push origin main
+
+          echo "✓ Sync completo!"
